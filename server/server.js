@@ -9,12 +9,12 @@ const createRouter = require('./helpers/create_router.js');
 
 app.use(express.json());
 
-MongoClient.connect('mongodb://localhost:27017', { useUnifiedTopology: true })
+MongoClient.connect('mongodb://0.0.0.0:27017', { useUnifiedTopology: true })
   .then((client) => {
     const db = client.db('solarSystem');
     const planetCollection = db.collection('planets');
     const planetRouter = createRouter(planetCollection);
-    app.use('/api/planets', planetRouter);
+    app.use('/api/planets/', planetRouter);
   })
   .catch(console.err);
 
