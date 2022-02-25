@@ -1,4 +1,4 @@
-use planets;
+use solarSystem;
 db.dropDatabase();
 
 db.planets.insertMany([
