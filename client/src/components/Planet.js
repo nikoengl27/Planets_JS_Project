@@ -15,6 +15,8 @@ const Planet = ({planet}) => {
     )
 }
 
+// something
+
 export default Planet
 
         
