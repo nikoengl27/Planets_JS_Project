@@ -1,8 +1,3 @@
-import React, {useEffect, useState} from 'react';
-
-
-
-
 import { useEffect, useState } from 'react'
 import PlanetList from '../components/PlanetList'
 // import PlanetForm from '../components/PlanetForm'
@@ -33,14 +28,9 @@ const PlanetContainer = () => {
 
   return (
     <>
-      <TeaBiscuitForm 
-        onTeaSubmit={handleTeaSubmit}
-        onBiscuitSubmit={handleBiscuitSubmit}
-      />
-      <TeaList teas={teas} />
-      <BiscuitList biscuits={biscuits} />
+      <PlanetList planets={planets} />
     </>
   )
 }
 
-export default TeasContainer
+export default PlanetContainer

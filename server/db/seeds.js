@@ -8593,7 +8593,7 @@ db.planets.insertMany([
     "id": "pluton",
     "name": "Pluton",
     "englishName": "Pluto",
-    "isPlanet": false,
+    "isPlanet": true,
     "moons": [
     {
     "moon": "Charon",
