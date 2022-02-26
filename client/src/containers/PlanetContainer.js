@@ -24,6 +24,16 @@ const PlanetContainer = () => {
     setPlanetList(false)
   }
 
+  const removePlanet = (id) => {
+    const temp = planets.map(s =>s);
+    const indexToDel = temp.map(s => s._id).indexOf(id);
+    console.log(indexToDel);
+
+    temp.splice(indexToDel, 1);
+    setPlanets(temp);
+    
+  }
+
 //   const handlePlanetSubmit = newPlanet => {
 //     fetch('http://localhost:5000/api/planets', {
 //       method: 'POST',
@@ -39,10 +49,10 @@ const PlanetContainer = () => {
     <div>
       <div className="main-container">
         <div>
-          {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet}/> : null}
+          {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet} removePlanet={removePlanet}/> : null}
         </div>
         <div>
-          {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected}/> : null}
+          {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected} /> : null}
         </div>
       </div>
     </div>

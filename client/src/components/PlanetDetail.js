@@ -1,24 +1,21 @@
 import React from 'react';
+import { deletePlanet } from './PlanetSelector';
 import PlanetContainer from '../containers/PlanetContainer';
 // import deletePlanet from './PlanetSelector.js'
 
 
-const PlanetDetail = ({selectedPlanet, PlanetContainer}) => {
+const PlanetDetail = ({selectedPlanet, removePlanet}) => {
 
     const baseURL = 'http://localhost:5000/api/planets/';
 
-    const deletePlanet = (id) =>  {
-        return fetch(baseURL + id, {
-          method: 'DELETE'
-        });
-      }
-
+    console.log(selectedPlanet);
     const handleDeletePlanet = () => {
-        deletePlanet(selectedPlanet._id);
-        console.log("planet deleted");
-        getPlanets();
-        
-      }
+        deletePlanet(selectedPlanet._id)
+        .then(() => {
+            removePlanet(selectedPlanet._id)
+            window.location.reload()
+        })
+    }
 
     
     return (

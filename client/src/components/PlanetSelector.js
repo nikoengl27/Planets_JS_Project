@@ -1,6 +1,13 @@
 const baseURL = 'http://localhost:5000/api/planets/';
 
-const PlanetService =  {
+
+export const deletePlanet = (id) => {
+  return fetch(baseURL + id, {
+    method: 'DELETE'
+  });
+}
+
+// const PlanetService =  {
 //   getPlanets() {
 //     return fetch(baseURL)
 //       .then(res => res.json());
@@ -27,12 +34,9 @@ const PlanetService =  {
 //     })
 //       .then(res => res.json());
 //   },
+// };
+  
 
-  deletePlanet(id) {
-    return fetch(baseURL + id, {
-      method: 'DELETE'
-    });
-  }
-};
 
-export default PlanetService;
+
+// export default PlanetService;
