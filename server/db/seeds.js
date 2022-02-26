@@ -8126,6 +8126,10 @@ db.planets.insertMany([
     "name": "Uranus",
     "englishName": "Uranus",
     "isPlanet": true,
+    "description": "Seventh planet from the Sun—rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin on its side.",
+    "lenghtOfYear": "84 Eart years",
+    "distanceFromTheSun": "19.8 AU",
+    "namesake": "Greek god of the sky",
     "moons": [
     {
     "moon": "Ariel",
@@ -8594,6 +8598,10 @@ db.planets.insertMany([
     "name": "Pluton",
     "englishName": "Pluto",
     "isPlanet": true,
+    "description": "Pluto is a complex world of ice mountains and frozen plains. Once considered the ninth planet, Pluto is the largest member of the Kuiper Belt and the best known of a new class of worlds called dwarf planets.",
+    "lenghtOfYear": "248.89 Earth years",
+    "distanceFromTheSun": "39 AU",
+    "namesake": "Roman god of the underworld",
     "moons": [
     {
     "moon": "Charon",
@@ -9030,6 +9038,10 @@ db.planets.insertMany([
     "name": "Neptune",
     "englishName": "Neptune",
     "isPlanet": true,
+    "description": "Neptune—the eighth and most distant major planet orbiting our Sun—is dark, cold and whipped by supersonic winds. It was the first planet located through mathematical calculations, rather than by telescope.",
+    "lenghtOfYear": "164.81 Earth years",
+    "distanceFromTheSun": "30.1 AU",
+    "namesake": "Roman god of the sea",
     "moons": [
     {
     "moon": "Triton",
@@ -9824,6 +9836,10 @@ db.planets.insertMany([
     "name": "Jupiter",
     "englishName": "Jupiter",
     "isPlanet": true,
+    "description": "Jupiter is more than twice as massive than the other planets of our solar system combined. The giant planet's Great Red spot is a centuries-old storm bigger than Earth.",
+    "lenghtOfYear": "11.86 Earth years",
+    "distanceFromTheSun": "5.2 AU",
+    "namesake": "King of the Greek gods",
     "moons": [
     {
     "moon": "Io",
@@ -10186,6 +10202,10 @@ db.planets.insertMany([
     "name": "Mars",
     "englishName": "Mars",
     "isPlanet": true,
+    "description": "Mars is a dusty, cold, desert world with a very thin atmosphere. There is strong evidence Mars was—billions of years ago—wetter and warmer, with a thicker atmosphere.",
+    "lenghtOfYear": "1.88 Earth years",
+    "distanceFromTheSun": "1.5 AU",
+    "namesake": "Greek god of war",
     "moons": [
     {
     "moon": "Phobos",
@@ -10236,6 +10256,10 @@ db.planets.insertMany([
     "name": "Mercure",
     "englishName": "Mercury",
     "isPlanet": true,
+    "description": "The smallest planet in our solar system and closest to the Sun—is only slightly larger than Earth's Moon. Mercury is the fastest planet, zipping around the Sun every 88 Earth days.",
+    "lenghtOfYear": "88 Earth days",
+    "distanceFromTheSun": "0.4 AU",
+    "namesake": "Greek god of commerce, messenger of the gods, and mediator between gods and mortals",
     "moons": null,
     "semimajorAxis": 57909050,
     "perihelion": 46001200,
@@ -10277,6 +10301,10 @@ db.planets.insertMany([
     "name": "Saturne",
     "englishName": "Saturn",
     "isPlanet": true,
+    "description": "Adorned with a dazzling, complex system of icy rings, Saturn is unique in our solar system. The other giant planets have rings, but none are as spectacular as Saturn's.",
+    "lenghtOfYear": "29.45 Earth years",
+    "distanceFromTheSun": "9.5 AU",
+    "namesake": "Father of the Greek god Jupiter and leader and youngest of the first generation of Titans",
     "moons": [
     {
     "moon": "Mimas",
@@ -10688,6 +10716,10 @@ db.planets.insertMany([
     "name": "La Terre",
     "englishName": "Earth",
     "isPlanet": true,
+    "description": "Earth—our home planet—is the only place we know of so far that’s inhabited by living things. It's also the only planet in our solar system with liquid water on the surface.",
+    "lenghtOfYear": "365.25 days",
+    "distanceFromTheSun": "1",
+    "namesake": "Variation of 'the ground' in many languages",
     "moons": [
     {
     "moon": "La Lune",
@@ -10734,6 +10766,10 @@ db.planets.insertMany([
     "name": "Vénus",
     "englishName": "Venus",
     "isPlanet": true,
+    "description": "Venus spins slowly in the opposite direction from most planets. A thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system.",
+    "lenghtOfYear": "225 Earth years",
+    "distanceFromTheSun": " 0.7 AU",
+    "namesake": "Greek goddess of love",
     "moons": null,
     "semimajorAxis": 108208475,
     "perihelion": 107477000,
