@@ -13,16 +13,16 @@ export const deletePlanet = (id) => {
 //       .then(res => res.json());
 //   },
 
-//   addPlanet(booking) {
-//     return fetch(baseURL, {
-//       method: 'POST',
-//       body: JSON.stringify(planet),
-//       headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     })
-//       .then(res => res.json());
-//   },
+  export const postPlanet = (planet) => {
+    return fetch(baseURL, {
+      method: 'POST',
+      body: JSON.stringify(planet),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json());
+  }
 
 //   updatePlanet(planet) {
 //     return fetch(baseURL + planet._id, {

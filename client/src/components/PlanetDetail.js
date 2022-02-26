@@ -4,7 +4,7 @@ import PlanetContainer from '../containers/PlanetContainer';
 // import deletePlanet from './PlanetSelector.js'
 
 
-const PlanetDetail = ({selectedPlanet, removePlanet}) => {
+const PlanetDetail = ({selectedPlanet}) => {
 
     const baseURL = 'http://localhost:5000/api/planets/';
 
@@ -12,7 +12,6 @@ const PlanetDetail = ({selectedPlanet, removePlanet}) => {
     const handleDeletePlanet = () => {
         deletePlanet(selectedPlanet._id)
         .then(() => {
-            removePlanet(selectedPlanet._id)
             window.location.reload()
         })
     }

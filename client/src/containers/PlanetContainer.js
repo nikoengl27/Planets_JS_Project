@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import PlanetList from '../components/PlanetList'
 import PlanetDetail from '../components/PlanetDetail'
-// import PlanetForm from '../components/PlanetForm'
+import NewPlanetForm from '../components/NewPlanetForm'
 
 const PlanetContainer = () => {
 
@@ -24,15 +24,15 @@ const PlanetContainer = () => {
     setPlanetList(false)
   }
 
-  const removePlanet = (id) => {
-    const temp = planets.map(s =>s);
-    const indexToDel = temp.map(s => s._id).indexOf(id);
-    console.log(indexToDel);
+  // const removePlanet = (id) => {
+  //   const temp = planets.map(s =>s);
+  //   const indexToDel = temp.map(s => s._id).indexOf(id);
+  //   console.log(indexToDel);
 
-    temp.splice(indexToDel, 1);
-    setPlanets(temp);
+  //   temp.splice(indexToDel, 1);
+  //   setPlanets(temp);
     
-  }
+  // }
 
 //   const handlePlanetSubmit = newPlanet => {
 //     fetch('http://localhost:5000/api/planets', {
@@ -48,8 +48,11 @@ const PlanetContainer = () => {
   return (
     <div>
       <div className="main-container">
+        {/* <div>
+          <NewPlanetForm/>
+          </div> */}
         <div>
-          {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet} removePlanet={removePlanet}/> : null}
+          {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet}/> : null}
         </div>
         <div>
           {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected} /> : null}
