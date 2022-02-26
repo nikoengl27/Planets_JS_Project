@@ -1,24 +1,22 @@
 import React from "react";
 
-const Planet = ({planet}) => {
+const Planet = ({planet, onPlanetClick}) => {
 
-    // const handleClick = function() {
-    //     onPlanetClick(planet);
-    // }
+    const handleClick = function() {
+        onPlanetClick(planet);
+    }
 
     return (
     <>
-        <div className="planetName">
-        <p>{planet.isPlanet ? planet.englishName : null} </p>       
-        <p>{planet.description}</p>
-        <p> {planet.lenghtOfYear}</p>
-        <p>{planet.distanceFromTheSun}</p>
-        <p>{planet.namesake}</p>
+        <div onClick={handleClick}> 
+        <div className="planetItem">
+        <div>{planet.isPlanet ? <img src={planet.img} height="300px" width="300px"/> : null} </div>
+        <div>{planet.isPlanet ? planet.englishName : null} </div>
+        
+        </div>
         </div>
     </>
-    )
-}
+)};
 
-export default Planet
-
-        
+export default Planet;
+    

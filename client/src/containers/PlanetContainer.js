@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
 import PlanetList from '../components/PlanetList'
+import PlanetDetail from '../components/PlanetDetail'
 // import PlanetForm from '../components/PlanetForm'
 
 const PlanetContainer = () => {
 
   const [planets, setPlanets] = useState([])
+  const [selectedPlanet, setSelectedPlanet] = useState(null);
+  const [showPlanetList, setPlanetList] = useState(true)
 
   useEffect(() => {
     getPlanets();
@@ -14,6 +17,11 @@ const PlanetContainer = () => {
     fetch('http://localhost:5000/api/planets')
       .then(response => response.json())
       .then(planets => setPlanets(planets));
+  }
+
+  const onPlanetSelected = function(planet){
+    setSelectedPlanet(planet);
+    setPlanetList(false)
   }
 
 //   const handlePlanetSubmit = newPlanet => {
@@ -27,9 +35,16 @@ const PlanetContainer = () => {
 
 
   return (
-    <>
-      <PlanetList planets={planets} />
-    </>
+    <div>
+      <div className="main-container">
+        <div>
+          {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet}/> : null}
+        </div>
+        <div>
+          {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected}/> : null}
+        </div>
+      </div>
+    </div>
   )
 }
 

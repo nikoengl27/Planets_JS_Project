@@ -2,10 +2,10 @@ import React from "react";
 import Planet from "./Planet";
 import PlanetDetail from "./Planet";
 
-const PlanetList = ({planets}) => {
+const PlanetList = ({planets, onPlanetSelected}) => {
 
     const planetItems = planets.map((planet, index) => {
-        return <Planet planet={planet} key={index} image={planet} />
+        return <Planet planet={planet} key={index} image={planet} onPlanetClick={onPlanetSelected}/>
     })
 
     return (
