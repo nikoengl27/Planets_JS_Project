@@ -9,15 +9,11 @@ const Planet = ({planet}) => {
     return (
     <>
         <div className="planetName">
-        {planet.isPlanet ? planet.englishName : null}
-        <br></br>
-        {planet.description}
-        <br></br>
-        {planet.lenghtOfYear}
-        <br></br>
-        {planet.distanceFromTheSun}
-        <br></br>
-        {planet.namesake}
+        <p>{planet.isPlanet ? planet.englishName : null} </p>       
+        <p>{planet.description}</p>
+        <p> {planet.lenghtOfYear}</p>
+        <p>{planet.distanceFromTheSun}</p>
+        <p>{planet.namesake}</p>
         </div>
     </>
     )
