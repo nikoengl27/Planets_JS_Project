@@ -1,6 +1,24 @@
 import React from 'react';
+import PlanetContainer from '../containers/PlanetContainer';
+// import deletePlanet from './PlanetSelector.js'
 
-const PlanetDetail = ({planets, selectedPlanet}) => {
+
+const PlanetDetail = ({selectedPlanet, PlanetContainer}) => {
+
+    const baseURL = 'http://localhost:5000/api/planets/';
+
+    const deletePlanet = (id) =>  {
+        return fetch(baseURL + id, {
+          method: 'DELETE'
+        });
+      }
+
+    const handleDeletePlanet = () => {
+        deletePlanet(selectedPlanet._id);
+        console.log("planet deleted");
+        getPlanets();
+        
+      }
 
     
     return (
@@ -11,6 +29,9 @@ const PlanetDetail = ({planets, selectedPlanet}) => {
         <p>{selectedPlanet.lengthOfYear}</p>
         <p>{selectedPlanet.distanceFromTheSun}</p>
         <p>{selectedPlanet.namesake}</p>
+        <button onClick={handleDeletePlanet}>
+        <span>❌</span> Destroy Planet!
+        </button>
         </>
         )
 
