@@ -5,6 +5,7 @@ import NewPlanetForm from '../components/NewPlanetForm'
 
 const PlanetContainer = () => {
 
+  const baseURL = 'http://localhost:5000/api/planets/';
   const [planets, setPlanets] = useState([])
   const [selectedPlanet, setSelectedPlanet] = useState(null);
   const [showPlanetList, setPlanetList] = useState(true)
@@ -14,15 +15,25 @@ const PlanetContainer = () => {
   }, [])
 
   const getPlanets = () => {
-    fetch('http://localhost:5000/api/planets')
+    fetch(baseURL) 
       .then(response => response.json())
-      .then(planets => setPlanets(planets));
+      .then(data => setPlanets(data));
   }
 
   const onPlanetSelected = function(planet){
     setSelectedPlanet(planet);
     setPlanetList(false)
   }
+
+  const postPlanet = (payload) => {
+    return fetch(baseURL, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    // .then(res => res.json())
+    .then(() => getPlanets())
+}
 
   // const removePlanet = (id) => {
   //   const temp = planets.map(s =>s);
@@ -46,17 +57,17 @@ const PlanetContainer = () => {
 
 
   return (
-    <div>
-      <div className="main-container">
-        {/* <div>
-          <NewPlanetForm/>
-          </div> */}
-        <div>
-          {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet}/> : null}
-        </div>
-        <div>
-          {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected} /> : null}
-        </div>
+    <div className="main-container">
+      <div className="new-planet">
+        <h3>Newly Discovered Star</h3>
+        <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/>
+      </div>
+      <div className="planet-list">
+        <h3>Our Solar System</h3>
+        {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet}/> : null}
+      </div>
+      <div>
+        {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected} /> : null}
       </div>
     </div>
   )
