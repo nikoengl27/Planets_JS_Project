@@ -37,12 +37,12 @@ const PlanetContainer = () => {
 
   const addButton = () => {
     setAdd(!showAdd)
+    setPlanetList(!showPlanetList)
   }
 
   return (
     <div className="main-container">
       <div className="new-planet">
-        <h3>Newly Discovered Star</h3>
         <button onClick={addButton}> ADD</button>
         {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/> : null}
       </div>

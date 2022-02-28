@@ -1,6 +1,5 @@
 import React from "react";
 import Planet from "./Planet";
-import PlanetDetail from "./Planet";
 
 const PlanetList = ({planets, onPlanetSelected, onPlanetSubmit}) => {
 
