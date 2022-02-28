@@ -9,6 +9,7 @@ const PlanetContainer = () => {
   const [planets, setPlanets] = useState([])
   const [selectedPlanet, setSelectedPlanet] = useState(null);
   const [showPlanetList, setPlanetList] = useState(true)
+  const [showAdd, setAdd] = useState(false)
 
   useEffect(() => {
     getPlanets();
@@ -31,36 +32,19 @@ const PlanetContainer = () => {
         body: JSON.stringify(payload),
         headers: { 'Content-Type': 'application/json' }
     })
-    // .then(res => res.json())
     .then(() => getPlanets())
 }
 
-  // const removePlanet = (id) => {
-  //   const temp = planets.map(s =>s);
-  //   const indexToDel = temp.map(s => s._id).indexOf(id);
-  //   console.log(indexToDel);
-
-  //   temp.splice(indexToDel, 1);
-  //   setPlanets(temp);
-    
-  // }
-
-//   const handlePlanetSubmit = newPlanet => {
-//     fetch('http://localhost:5000/api/planets', {
-//       method: 'POST',
-//       body: JSON.stringify(newPlanet),
-//       headers: { 'Content-Type': 'application/json' }
-//     })
-//       .then(() => getPlanets())
-//   }
-
-
+  const addButton = () => {
+    setAdd(!showAdd)
+  }
 
   return (
     <div className="main-container">
       <div className="new-planet">
         <h3>Newly Discovered Star</h3>
-        <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/>
+        <button onClick={addButton}> ADD</button>
+        {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/> : null}
       </div>
       <div className="planet-list">
         <h3>Our Solar System</h3>

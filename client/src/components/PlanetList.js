@@ -5,7 +5,9 @@ import PlanetDetail from "./Planet";
 const PlanetList = ({planets, onPlanetSelected}) => {
 
     const planetItems = planets.map((planet, index) => {
+        if(planet.isPlanet){
         return <Planet planet={planet} key={index} image={planet} onPlanetClick={onPlanetSelected}/>
+        }
     })
 
     return (
