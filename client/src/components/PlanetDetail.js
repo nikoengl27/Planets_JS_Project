@@ -62,16 +62,23 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
     
   return (
         <>
+        <div className='planet-image'>
         <img src={selectedPlanet.img} height="300px" width= "300px"></img>
-        <p>{selectedPlanet.englishName}</p>      
-        <p>{selectedPlanet.description}</p>
-        <p>{selectedPlanet.lengthOfYear}</p>
-        <p>{selectedPlanet.distanceFromTheSun}</p>
-        <p>{selectedPlanet.namesake}</p>
-        <button onClick={handleDeletePlanet}>
-        <span>❌</span> Destroy Planet!
-        </button>
+        </div>
+        <div className='planet-details'>
+        <p><u>Name</u>: {selectedPlanet.englishName}</p>      
+        <p><u>Description</u>: {selectedPlanet.description}</p>
+        <p><u>Lenght of Year</u>: {selectedPlanet.lengthOfYear}</p>
+        <p><u>Distance from Sun</u>: {selectedPlanet.distanceFromTheSun}</p>
+        <p><u>Namesake</u>: {selectedPlanet.namesake}</p>
+        <div className='delete-planet'>
+            <button onClick={handleDeletePlanet}>
+            Destroy Planet!
+            </button>
+        </div>
+        </div>
 
+        <div className='edit-planet'>
         <form onSubmit={handleFormSubmit} id="edit-planet-form" >
              <h2>Edit Planet Details:</h2>
           <div className="formWrap">
@@ -102,6 +109,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
 
             <input type="submit" value="Save" id="save"/>
 	    </form>
+        </div>
         </>
         )
 
