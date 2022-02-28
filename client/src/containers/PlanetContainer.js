@@ -86,7 +86,7 @@ const updatePlanet = (payload) => {
 
       </div>
       <div className="planet-list">
-        {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet}/> : null}
+        {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet} onPlanetSubmit={updatePlanet}/> : null}
       </div>
       <div>
         {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected} /> : null}

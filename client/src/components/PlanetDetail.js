@@ -60,9 +60,9 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
         window.location.reload()
     }
 
-    const moons = selectedPlanet.moons.map ((moon) => moon.moon)
-    const newMoons = moons.join(' ')
-    const countMoons = moons.length
+    // const moons = selectedPlanet.moons.map ((moon) => moon.moon)
+    // const newMoons = moons.join(' ')
+    // const countMoons = moons.length
 
     
     
@@ -77,12 +77,12 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
         <div className='planet-details'>
         <p><u>Name</u>: {selectedPlanet.englishName}</p>      
         <p><u>Description</u>: {selectedPlanet.description}</p>
-        <p><u>Lenght of Year</u>: {selectedPlanet.lengthOfYear}</p>
+        <p><u>Length of Year</u>: {selectedPlanet.lengthOfYear}</p>
         <p><u>Distance from Sun</u>: {selectedPlanet.distanceFromTheSun}</p>
         <p><u>Namesake</u>: {selectedPlanet.namesake}</p>
 
-        <p><u> {selectedPlanet.englishName} has {countMoons} moons: </u></p>
-        <p>{newMoons}</p>
+        {/* <p><u> {selectedPlanet.englishName} has {countMoons} moons: </u></p>
+        <p>{newMoons}</p> */}
 
         <div className='delete-planet'>
             <button onClick={handleDeletePlanet}>
