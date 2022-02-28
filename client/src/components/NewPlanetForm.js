@@ -87,7 +87,6 @@ const PlanetForm = ({onPlanetSubmit}) => {
     const [englishName, setEnglishName] = useState('')
     const [description, setDescription] = useState('')
     const [isPlanet, setIsPlanet] = useState('')
-    const [image, setImage] = useState('')
     // const img = '/client/src/images/unknownplanet.png'
 
     const IsItPlanet = {
@@ -106,15 +105,11 @@ const PlanetForm = ({onPlanetSubmit}) => {
     const handleIsPlanetChange = (event) => {
         setIsPlanet(event.target.value)
     }
-    const handleImageChange = (event) => {
-        setImage(event.target.value)
-    }
 
     const resetForm = () => {
         setEnglishName('')
         setDescription('')
         setIsPlanet('')
-        setImage('')
     }
 
     const handleFormSubmit = (event) => {
@@ -123,7 +118,6 @@ const PlanetForm = ({onPlanetSubmit}) => {
             englishName,
             description,
             isPlanet,
-            image
             // img
         }
         onPlanetSubmit(payload)
@@ -138,9 +132,6 @@ const PlanetForm = ({onPlanetSubmit}) => {
             <label htmlFor="description">Description:</label>
             <input type="text" name="description" value={description} onChange={handleDescriptionChange} required/>
       
-            <label htmlFor="image">Image URL:</label>
-            <input type="text" name="image" value={image} onChange={handleImageChange} required/>
-      
             <label htmlFor="isPlanet">Is it a planet though?</label>
             <select name="isPlanet" value={isPlanet} onChange={handleIsPlanetChange}>
             <option value="" disabled>Choose...</option>
@@ -149,9 +140,7 @@ const PlanetForm = ({onPlanetSubmit}) => {
             </select>
 
             <input type="submit" value="Save" />
-            console.log({image});
         </form>
-        
     )
 }
 
