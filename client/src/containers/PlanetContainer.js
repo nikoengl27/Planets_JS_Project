@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import PlanetList from '../components/PlanetList'
 import PlanetDetail from '../components/PlanetDetail'
 import NewPlanetForm from '../components/NewPlanetForm'
+// import db from mongodb 
 
 const PlanetContainer = () => {
 
@@ -35,9 +36,31 @@ const PlanetContainer = () => {
     .then(() => getPlanets())
 }
 
-  const addButton = () => {
-    setAdd(!showAdd)
-  }
+const updatePlanet = (payload) => {
+  return fetch(baseURL + selectedPlanet._id, {
+    method: 'PUT',
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(res => res.json());
+}
+
+const resetPlanets = () => {
+  db.dropDatabase()
+  db.load("/server/db/seeds.js")
+
+}
+
+// const editPlanet = () => {
+//   updatePlanet({
+//     _id: selectedPlanet._id,
+//     name: selectedPlanet.name,
+//     description: selectedPlanet.description,
+//   });
+// }
+
 
   return (
     <div className="main-container">
@@ -48,7 +71,7 @@ const PlanetContainer = () => {
       </div>
       <div className="planet-list">
         <h3>Our Solar System</h3>
-        {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet}/> : null}
+        {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet} onPlanetSubmit={updatePlanet} /> : null}
       </div>
       <div>
         {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected} /> : null}
