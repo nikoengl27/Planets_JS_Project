@@ -96,6 +96,7 @@ const updatePlanet = (payload) => {
     <button onClick={addButton}> Discovered Planet!</button>
     {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/> : null}
   </div>
+  </div>
   </>
   )
 }
