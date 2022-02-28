@@ -11,10 +11,11 @@ const isPlanetList = planets.filter((planet) => planet.isPlanet === true)
 const planetGravity = isPlanetList.map((planet) => planet.gravity)
 const planetName = isPlanetList.map((planet) => planet.englishName)
 const planetMass = isPlanetList.map((planet) => planet.mass.massValue)
+const planetDistance = isPlanetList.map((planet) => planet.distanceFromTheSun)
 console.log(isPlanetList)
     
 
-const options = {
+const barChart = {
     chart: {
         type: 'column'
     },
@@ -54,7 +55,7 @@ const options = {
     }]
 };
 
-const options2 = {
+const pieChart = {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
@@ -67,28 +68,32 @@ const options2 = {
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
     },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
-        }
-    },
     plotOptions: {
+        series: {
+            dataLabels: {
+                enabled: true,
+                format: '{name}'
+            }
+        },
+
         pie: {
             cursor: 'pointer'
         }
     },
-    
     series: [{
         name: planetName,
         colorByPoint: true,
-        data: planetMass
-        }]
+        data: [{
+            name: planetName,
+            y: planetMass}]}]
 };
+
+
 
 return(
     <div>
-      <HighchartsReact highcharts={Highcharts} options={options} planets={planets}/>
-      <HighchartsReact highcharts={Highcharts} options={options2} planets={planets}/>
+      <HighchartsReact highcharts={Highcharts} options={barChart} planets={planets}/>
+      <HighchartsReact highcharts={Highcharts} options={pieChart} planets={planets}/>
     </div>)
 
 
