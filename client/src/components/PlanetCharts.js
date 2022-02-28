@@ -7,15 +7,12 @@ import PlanetContainer from '../containers/PlanetContainer';
 import PlanetList from './PlanetList';
 
 
-// const sampleArray = [1, 2, 3, 4, 5, 6]
+const sampleArray = [1, 2, 3, 4, 5, 6]
 
+const planetGravity = planets.map((planet) => planet.gravity)
 
-
-    
-    // const planetGravity = planets.map((planet) => planet.gravity)
-    // console.log(planets)
-    //     // if(planet.isPlanet){
-    //     // return <Planet planet={planet} gravity={planet.gravity} name={planet.englishName} key={index}/>
+        // if(planet.isPlanet){
+        // return <Planet planet={planet} gravity={planet.gravity} name={planet.englishName} key={index}/>
     
 
 
@@ -53,7 +50,7 @@ const options = {
         }
     },
     series: [{
-        data: [1, 2, 3, 4, 5, 6]
+        data: planetGravity
 
     }]
 };
