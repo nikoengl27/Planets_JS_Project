@@ -10,10 +10,10 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
     const [description, setDescription] = useState('')
     const [isPlanet, setIsPlanet] = useState('')
 
-    const [showEdit, setEdit] = useState(false)
-    const editButton = () => {
-        setEdit(!showEdit)
-      }
+    // const [showEdit, setEdit] = useState(false)
+    // const editButton = () => {
+    //     setEdit(!showEdit)
+    //   }
 
     const IsItPlanet = {
         Yes: 'Yes',
@@ -69,21 +69,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
   return (
         <>
 
-        <button onClick={editButton}> edit</button>
-
-
-        <img src={selectedPlanet.img} height="300px" width= "300px"></img>
-        <p>{selectedPlanet.englishName}</p>      
-        <p> Description: {selectedPlanet.description}</p>
-        <p> Length of Year: {selectedPlanet.lengthOfYear}</p>
-        <p> Distance from the Sun: {selectedPlanet.distanceFromTheSun}</p>
-        <p> Namesake: {selectedPlanet.namesake}</p>
-        <p> {selectedPlanet.englishName} has {countMoons} moons:</p>
-        <p>{newMoons}</p>
-
-        <button onClick={handleDeletePlanet}>
-        <span>❌</span> Destroy Planet!
-        </button>
+        {/* <button onClick={editButton}> edit</button> */}
 
         <div className='planet-image'>
         <img src={selectedPlanet.img} height="300px" width= "300px"></img>
@@ -94,6 +80,10 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
         <p><u>Lenght of Year</u>: {selectedPlanet.lengthOfYear}</p>
         <p><u>Distance from Sun</u>: {selectedPlanet.distanceFromTheSun}</p>
         <p><u>Namesake</u>: {selectedPlanet.namesake}</p>
+
+        <p><u> {selectedPlanet.englishName} has {countMoons} moons: </u></p>
+        <p>{newMoons}</p>
+
         <div className='delete-planet'>
             <button onClick={handleDeletePlanet}>
             Destroy Planet!
