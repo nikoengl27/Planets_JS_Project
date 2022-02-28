@@ -2,7 +2,21 @@ import React from 'react';
 import {render} from 'react-dom';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import Planet from './Planet';
+import PlanetContainer from '../containers/PlanetContainer';
+import PlanetList from './PlanetList';
 
+
+// const sampleArray = [1, 2, 3, 4, 5, 6]
+
+
+
+    
+    // const planetGravity = planets.map((planet) => planet.gravity)
+    // console.log(planets)
+    //     // if(planet.isPlanet){
+    //     // return <Planet planet={planet} gravity={planet.gravity} name={planet.englishName} key={index}/>
+    
 
 
 const options = {
@@ -39,10 +53,26 @@ const options = {
         }
     },
     series: [{
-        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+        data: [1, 2, 3, 4, 5, 6]
 
     }]
 };
+
+
+const PlanetCharts = () => ( 
+    <div>
+      <HighchartsReact highcharts={Highcharts} options={options} />
+    </div>
+    
+    
+)
+
+render(<PlanetCharts />, document.getElementById('root'));
+
+export default PlanetCharts;
+
+
+
 
 // const planetItems = ({planets}) => {
 //     planets.filter(checkIsPlanet);
@@ -54,14 +84,13 @@ const options = {
 // }
 
 
-const PlanetCharts = () => (
+// const PlanetCharts = () => (
 
-    <div>
-      <HighchartsReact highcharts={Highcharts} options={options} />
-    </div>
-  );
- planetItems()
-  render(<PlanetCharts/>, document.getElementById('root'));
+//     <div>
+//       <HighchartsReact highcharts={Highcharts} options={options} />
+//     </div>
+//   );
+//   render(<PlanetCharts/>, document.getElementById('root'));
   
-export default PlanetCharts
+// export default PlanetCharts
   
