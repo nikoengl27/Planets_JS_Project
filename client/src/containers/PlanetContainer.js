@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import PlanetList from '../components/PlanetList'
 import PlanetDetail from '../components/PlanetDetail'
 import NewPlanetForm from '../components/NewPlanetForm'
+import PlanetCharts from '../components/PlanetCharts'
 // import db from mongodb 
 
 const PlanetContainer = () => {
@@ -47,11 +48,11 @@ const updatePlanet = (payload) => {
     .then(res => res.json());
 }
 
-const resetPlanets = () => {
-  db.dropDatabase()
-  db.load("/server/db/seeds.js")
+// const resetPlanets = () => {
+//   db.dropDatabase()
+//   db.load("/server/db/seeds.js")
 
-}
+// }
 
 // const editPlanet = () => {
 //   updatePlanet({
@@ -64,6 +65,7 @@ const resetPlanets = () => {
 
   return (
     <div className="main-container">
+      <PlanetCharts planets={planets}/>
       <div className="new-planet">
         <h3>Newly Discovered Star</h3>
         <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/>
