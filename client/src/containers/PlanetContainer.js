@@ -48,6 +48,8 @@ const updatePlanet = (payload) => {
     .then(res => res.json());
 }
 
+
+
 // const resetPlanets = () => {
 //   db.dropDatabase()
 //   db.load("/server/db/seeds.js")

@@ -10,9 +10,6 @@ import PlanetList from './PlanetList';
 const sampleArray = [1, 2, 3, 4, 5, 6]
 
 const planetGravity = planets.map((planet) => planet.gravity)
-
-        // if(planet.isPlanet){
-        // return <Planet planet={planet} gravity={planet.gravity} name={planet.englishName} key={index}/>
     
 
 
@@ -50,7 +47,7 @@ const options = {
         }
     },
     series: [{
-        data: planetGravity
+        data: sampleArray
 
     }]
 };
@@ -58,36 +55,17 @@ const options = {
 
 const PlanetCharts = () => ( 
     <div>
-      <HighchartsReact highcharts={Highcharts} options={options} />
+      <HighchartsReact highcharts={Highcharts} options={options} planets={planets}/>
     </div>
     
     
 )
 
-render(<PlanetCharts />, document.getElementById('root'));
+render(<PlanetCharts planets={planets}/>, document.getElementById('root'));
 
 export default PlanetCharts;
 
 
 
 
-// const planetItems = ({planets}) => {
-//     planets.filter(checkIsPlanet);
-//     console.log(planetItems)
-// }
-
-// function checkIsPlanet(planet) {
-//     return planet.isPlanet === true;
-// }
-
-
-// const PlanetCharts = () => (
-
-//     <div>
-//       <HighchartsReact highcharts={Highcharts} options={options} />
-//     </div>
-//   );
-//   render(<PlanetCharts/>, document.getElementById('root'));
-  
-// export default PlanetCharts
   
