@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
 import { deletePlanet } from './PlanetSelector';
-import PlanetContainer from '../containers/PlanetContainer';
-import PlanetList from './PlanetList';
 
 
 const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
 
-    const baseURL = 'http://localhost:5000/api/planets/';
+    
 
     const [englishName, setEnglishName] = useState('')
     const [description, setDescription] = useState('')
     const [isPlanet, setIsPlanet] = useState('')
+
+    const [showEdit, setEdit] = useState(false)
+    const editButton = () => {
+        setEdit(!showEdit)
+      }
 
     const IsItPlanet = {
         Yes: 'Yes',
@@ -50,18 +53,38 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
             englishName,
             description,
             isPlanet,
-            // img
         }
         onPlanetSubmit(payload)
         console.log(payload)
         resetForm()
         window.location.reload()
     }
-    
 
+    const moons = selectedPlanet.moons.map ((moon) => moon.moon)
+    const newMoons = moons.join(' ')
+    const countMoons = moons.length
+
+    
     
   return (
         <>
+
+        <button onClick={editButton}> edit</button>
+
+
+        <img src={selectedPlanet.img} height="300px" width= "300px"></img>
+        <p>{selectedPlanet.englishName}</p>      
+        <p> Description: {selectedPlanet.description}</p>
+        <p> Length of Year: {selectedPlanet.lengthOfYear}</p>
+        <p> Distance from the Sun: {selectedPlanet.distanceFromTheSun}</p>
+        <p> Namesake: {selectedPlanet.namesake}</p>
+        <p> {selectedPlanet.englishName} has {countMoons} moons:</p>
+        <p>{newMoons}</p>
+
+        <button onClick={handleDeletePlanet}>
+        <span>❌</span> Destroy Planet!
+        </button>
+
         <div className='planet-image'>
         <img src={selectedPlanet.img} height="300px" width= "300px"></img>
         </div>

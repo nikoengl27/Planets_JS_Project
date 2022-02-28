@@ -69,6 +69,7 @@ const updatePlanet = (payload) => {
 
   const addButton = () => {
     setAdd(!showAdd)
+    setPlanetList(!showPlanetList)
   }
 
   return (
@@ -80,7 +81,6 @@ const updatePlanet = (payload) => {
 
       {/* <PlanetCharts planets={planets}/> */}
       <div className="new-planet">
-        <h3>Newly Discovered Star</h3>
         <button onClick={addButton}> ADD</button>
         {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/> : null}
 

@@ -1,5 +1,15 @@
 .planet-items{
   display: grid;
+    height: 500px;
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+    gap: 25px 60px;
+} */
+
+.main-container{
+  display: flex;
+  
+}
+
   height: 100px;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 25px 60px;
