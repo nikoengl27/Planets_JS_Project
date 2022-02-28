@@ -1,22 +1,17 @@
 import React from 'react';
-import {render} from 'react-dom';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import Planet from './Planet';
-import PlanetContainer from '../containers/PlanetContainer';
-import PlanetList from './PlanetList';
 
 
 const PlanetCharts = ({planets}) => { 
 
 
-// const sampleArray = [1, 2, 3, 4, 5, 6]
-
 const isPlanetList = planets.filter((planet) => planet.isPlanet === true)
 
-const planetGravity = isPlanetList.map((planet) => planet.density)
+const planetGravity = isPlanetList.map((planet) => planet.gravity)
+const planetName = isPlanetList.map((planet) => planet.englishName)
+console.log(isPlanetList)
     
-
 
 const options = {
     chart: {
@@ -27,6 +22,7 @@ const options = {
     },
     xAxis: {
         min: 0,
+        categories: planetName,
         title: {
             text: 'Planet'
         }
@@ -40,7 +36,7 @@ const options = {
     tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true
@@ -60,8 +56,6 @@ const options = {
 return(
     <div>
       <HighchartsReact highcharts={Highcharts} options={options} planets={planets}/>
-{/* 
-    {render}(<PlanetCharts planets={planets}/>, document.getElementById('root')); */}
     </div>)
 
 
