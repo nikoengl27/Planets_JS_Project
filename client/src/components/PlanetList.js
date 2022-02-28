@@ -10,7 +10,7 @@ const PlanetList = ({planets, onPlanetSelected, onPlanetSubmit}) => {
     })
 
     return (
-        <div className="planet-list">
+        <div className="planet-items">
             {planetItems}
         </div>
     )

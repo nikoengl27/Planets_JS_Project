@@ -1,4 +1,4 @@
-/* .planet-list{
+.planet-items{
   display: grid;
     height: 500px;
     grid-template: repeat(5, 1fr) / repeat(5, 1fr);
@@ -10,3 +10,44 @@
   
 }
 
+  height: 100px;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 25px 60px;
+  color: antiquewhite;
+  padding-left: 7%;
+ }
+
+ .header {
+  background-image: url(./images/solarsystem.png);
+  background-size: contain;
+  padding-top: 1%;
+  text-align: center;
+  color: aliceblue;
+ }
+
+ .new-planet{
+   position: absolute;
+   top: 6.5%;
+   right: 0;
+ }
+
+.planet-image{
+  position: absolute;
+  top: 9%;
+}
+
+.planet-details{
+  position: absolute;
+  left: 25%;
+  color: aliceblue;
+}
+
+.edit-planet{
+  position: absolute;
+  right: 0%;
+  bottom: 10%;
+}
+/* 
+ .main-container{
+  display: flex;
+} */

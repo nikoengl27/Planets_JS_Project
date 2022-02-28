@@ -68,6 +68,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
     
   return (
         <>
+
         <button onClick={editButton}> edit</button>
 
 
@@ -84,6 +85,23 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
         <span>❌</span> Destroy Planet!
         </button>
 
+        <div className='planet-image'>
+        <img src={selectedPlanet.img} height="300px" width= "300px"></img>
+        </div>
+        <div className='planet-details'>
+        <p><u>Name</u>: {selectedPlanet.englishName}</p>      
+        <p><u>Description</u>: {selectedPlanet.description}</p>
+        <p><u>Lenght of Year</u>: {selectedPlanet.lengthOfYear}</p>
+        <p><u>Distance from Sun</u>: {selectedPlanet.distanceFromTheSun}</p>
+        <p><u>Namesake</u>: {selectedPlanet.namesake}</p>
+        <div className='delete-planet'>
+            <button onClick={handleDeletePlanet}>
+            Destroy Planet!
+            </button>
+        </div>
+        </div>
+
+        <div className='edit-planet'>
         <form onSubmit={handleFormSubmit} id="edit-planet-form" >
              <h2>Edit Planet Details:</h2>
           <div className="formWrap">
@@ -114,6 +132,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
 
             <input type="submit" value="Save" id="save"/>
 	    </form>
+        </div>
         </>
         )
 
