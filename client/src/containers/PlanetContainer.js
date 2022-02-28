@@ -40,20 +40,23 @@ const PlanetContainer = () => {
   }
 
   return (
+    <>
     <div className="main-container">
-      <div className="new-planet">
-        <h3>Newly Discovered Star</h3>
-        <button onClick={addButton}> ADD</button>
-        {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/> : null}
+      <div class="header">
+        <h1>The Solar System</h1>
       </div>
       <div className="planet-list">
-        <h3>Our Solar System</h3>
         {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet}/> : null}
       </div>
       <div>
         {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected} /> : null}
       </div>
     </div>
+    <div className="new-planet">
+    <button onClick={addButton}> Discovered Planet!</button>
+    {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/> : null}
+  </div>
+  </>
   )
 }
 

@@ -8130,7 +8130,7 @@ db.planets.insertMany([
     "lengthOfYear": "84 Eart years",
     "distanceFromTheSun": "19.8 AU",
     "namesake": "Greek god of the sky",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Uranus_true_colour.jpg",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/1/16/Uranus2-transparent.png",
     "moons": [
     {
     "moon": "Ariel",
@@ -8603,7 +8603,7 @@ db.planets.insertMany([
     "lengthOfYear": "248.89 Earth years",
     "distanceFromTheSun": "39 AU",
     "namesake": "Roman god of the underworld",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Pluto_in_True_Color_-_High-Res.jpg",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/94/Pluto-transparent.png",
     "moons": [
     {
     "moon": "Charon",
@@ -9044,7 +9044,7 @@ db.planets.insertMany([
     "lengthOfYear": "164.81 Earth years",
     "distanceFromTheSun": "30.1 AU",
     "namesake": "Roman god of the sea",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/20/Neptune_cutout.png",
     "moons": [
     {
     "moon": "Triton",
@@ -9843,7 +9843,7 @@ db.planets.insertMany([
     "lengthOfYear": "11.86 Earth years",
     "distanceFromTheSun": "5.2 AU",
     "namesake": "King of the Greek gods",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg",
+    "img": "https://www.pngall.com/wp-content/uploads/7/Jupiter-PNG-File-Download-Free.png",
     "moons": [
     {
     "moon": "Io",
@@ -10210,7 +10210,7 @@ db.planets.insertMany([
     "lengthOfYear": "1.88 Earth years",
     "distanceFromTheSun": "1.5 AU",
     "namesake": "Greek god of war",
-    "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/1024px-OSIRIS_Mars_true_color.jpg",
+    "img":"https://upload.wikimedia.org/wikipedia/commons/2/27/Mars_transparent.png",
     "moons": [
     {
     "moon": "Phobos",
@@ -10265,7 +10265,7 @@ db.planets.insertMany([
     "lengthOfYear": "88 Earth days",
     "distanceFromTheSun": "0.4 AU",
     "namesake": "Greek god of commerce, messenger of the gods, and mediator between gods and mortals",
-    "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/800px-Mercury_in_true_color.jpg",
+    "img":"https://www.pngall.com/wp-content/uploads/2/Mercury-Planet-PNG-Download-Image.png",
     "moons": null,
     "semimajorAxis": 57909050,
     "perihelion": 46001200,
@@ -10311,7 +10311,7 @@ db.planets.insertMany([
     "lengthOfYear": "29.45 Earth years",
     "distanceFromTheSun": "9.5 AU",
     "namesake": "Father of the Greek god Jupiter and leader and youngest of the first generation of Titans",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/28/Saturn_01.svg",
     "moons": [
     {
     "moon": "Mimas",
@@ -10727,8 +10727,9 @@ db.planets.insertMany([
     "lengthOfYear": "365.25 days",
     "distanceFromTheSun": "1",
     "namesake": "Variation of 'the ground' in many languages",
-    "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/The_Blue_Marble_%28remastered%29.jpg/1024px-The_Blue_Marble_%28remastered%29.jpg",
+    "img": "https://www.pngall.com/wp-content/uploads/2016/06/Earth-Free-Download-PNG.png",
     "moons": [
+        
     {
     "moon": "La Lune",
     "rel": "https://api.le-systeme-solaire.net/rest/bodies/lune"
@@ -10778,7 +10779,7 @@ db.planets.insertMany([
     "lengthOfYear": "225 Earth years",
     "distanceFromTheSun": " 0.7 AU",
     "namesake": "Greek goddess of love",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg",
+    "img": "https://www.pngall.com/wp-content/uploads/11/Venus-PNG-Clipart.png",
     "moons": null,
     "semimajorAxis": 108208475,
     "perihelion": 107477000,

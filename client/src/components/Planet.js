@@ -8,12 +8,12 @@ const Planet = ({planet, onPlanetClick, onPlanetSubmit}) => {
 
     return (
     <>
+    <div className="planetItem">
         <div onClick={handleClick}> 
-            <div className="planetItem">
-            <div>{planet.isPlanet ? planet.englishName : null} </div>
-            <div>{planet.isPlanet ? <img src={planet.img} height="300px" width="300px"/> : null} </div>
-            </div>
+            <div><b><u>{planet.isPlanet ? planet.englishName : null}</u></b></div>
         </div>
+        <div>{planet.isPlanet ? <img src={planet.img} height="300px" width="300px"/> : null} </div>
+    </div>
     </>
 )};
 
