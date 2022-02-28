@@ -7,15 +7,14 @@
 
 .main-container{
   display: flex;
-  
-}
-
   height: 100px;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   gap: 25px 60px;
   color: antiquewhite;
   padding-left: 7%;
- }
+}
+
+
 
  .header {
   background-image: url(./images/solarsystem.png);
