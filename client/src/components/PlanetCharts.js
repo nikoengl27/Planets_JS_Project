@@ -7,7 +7,12 @@ import PlanetContainer from '../containers/PlanetContainer';
 import PlanetList from './PlanetList';
 
 
-const sampleArray = [1, 2, 3, 4, 5, 6]
+const PlanetCharts = ({planets}) => { 
+
+
+// const sampleArray = [1, 2, 3, 4, 5, 6]
+
+// const isPlanetList = planets.map((planet) => planet.isPlanet === true)
 
 const planetGravity = planets.map((planet) => planet.gravity)
     
@@ -47,21 +52,20 @@ const options = {
         }
     },
     series: [{
-        data: sampleArray
+        data: planetGravity
 
     }]
 };
 
-
-const PlanetCharts = () => ( 
+return(
     <div>
       <HighchartsReact highcharts={Highcharts} options={options} planets={planets}/>
-    </div>
-    
-    
-)
+{/* 
+    {render}(<PlanetCharts planets={planets}/>, document.getElementById('root')); */}
+    </div>)
 
-render(<PlanetCharts planets={planets}/>, document.getElementById('root'));
+
+}
 
 export default PlanetCharts;
 
