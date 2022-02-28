@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react'
 import PlanetList from '../components/PlanetList'
 import PlanetDetail from '../components/PlanetDetail'
 import NewPlanetForm from '../components/NewPlanetForm'
+
 import PlanetCharts from '../components/PlanetCharts'
 // import db from mongodb 
+
 
 const PlanetContainer = () => {
 
@@ -11,6 +13,7 @@ const PlanetContainer = () => {
   const [planets, setPlanets] = useState([])
   const [selectedPlanet, setSelectedPlanet] = useState(null);
   const [showPlanetList, setPlanetList] = useState(true)
+  const [showAdd, setAdd] = useState(false)
 
   useEffect(() => {
     getPlanets();
@@ -33,7 +36,6 @@ const PlanetContainer = () => {
         body: JSON.stringify(payload),
         headers: { 'Content-Type': 'application/json' }
     })
-    // .then(res => res.json())
     .then(() => getPlanets())
 }
 
@@ -65,16 +67,21 @@ const updatePlanet = (payload) => {
 // }
 
 
+  const addButton = () => {
+    setAdd(!showAdd)
+  }
+
   return (
     <div className="main-container">
       {/* <PlanetCharts planets={planets}/> */}
       <div className="new-planet">
         <h3>Newly Discovered Star</h3>
-        <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/>
+        <button onClick={addButton}> ADD</button>
+        {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/> : null}
       </div>
       <div className="planet-list">
         <h3>Our Solar System</h3>
-        {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet} onPlanetSubmit={updatePlanet} /> : null}
+        {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet}/> : null}
       </div>
       <div>
         {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected} /> : null}
