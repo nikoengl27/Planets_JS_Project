@@ -67,7 +67,7 @@ const updatePlanet = (payload) => {
 
   return (
     <div className="main-container">
-      <PlanetCharts planets={planets}/>
+      {/* <PlanetCharts planets={planets}/> */}
       <div className="new-planet">
         <h3>Newly Discovered Star</h3>
         <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/>

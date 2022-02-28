@@ -9,6 +9,8 @@ const PlanetCharts = ({planets}) => {
 const isPlanetList = planets.filter((planet) => planet.isPlanet === true)
 
 
+
+
 const planetGravity = isPlanetList.map((planet) => planet.gravity)
 
 const planetName = isPlanetList.map((planet) => planet.englishName)
@@ -16,6 +18,17 @@ const planetMass = isPlanetList.map((planet) => planet.mass.massValue)
 const planetDistance = isPlanetList.map((planet) => planet.distanceFromTheSun)
 console.log(isPlanetList)
 console.log(planetDistance)
+
+let sortedPlanets = []
+let currentClosestPlanet = 0;
+  for (const planet of isPlanetList) {
+    if (planet.distanceFromTheSun > currentClosestPlanet) {
+      currentClosestPlanet = planet.distanceFromTheSun;
+      sortedPlanets.push(planet)
+    }
+  }
+console.log(currentClosestPlanet)
+console.log(sortedPlanets)
 
     
 

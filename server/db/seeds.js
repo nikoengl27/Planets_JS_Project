@@ -8128,7 +8128,7 @@ db.planets.insertMany([
     "isPlanet": true,
     "description": "Seventh planet from the Sun—rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin on its side.",
     "lengthOfYear": "84 Eart years",
-    "distanceFromTheSun": "19.8 AU",
+    "distanceFromTheSun": 19.8,
     "namesake": "Greek god of the sky",
     "img": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Uranus_true_colour.jpg",
     "moons": [
@@ -8601,7 +8601,7 @@ db.planets.insertMany([
     "isPlanet": true,
     "description": "Pluto is a complex world of ice mountains and frozen plains. Once considered the ninth planet, Pluto is the largest member of the Kuiper Belt and the best known of a new class of worlds called dwarf planets.",
     "lengthOfYear": "248.89 Earth years",
-    "distanceFromTheSun": "39 AU",
+    "distanceFromTheSun": 39,
     "namesake": "Roman god of the underworld",
     "img": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Pluto_in_True_Color_-_High-Res.jpg",
     "moons": [
@@ -9042,7 +9042,7 @@ db.planets.insertMany([
     "isPlanet": true,
     "description": "Neptune—the eighth and most distant major planet orbiting our Sun—is dark, cold and whipped by supersonic winds. It was the first planet located through mathematical calculations, rather than by telescope.",
     "lengthOfYear": "164.81 Earth years",
-    "distanceFromTheSun": "30.1 AU",
+    "distanceFromTheSun": 30.1,
     "namesake": "Roman god of the sea",
     "img": "https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg",
     "moons": [
@@ -9841,7 +9841,7 @@ db.planets.insertMany([
     "isPlanet": true,
     "description": "Jupiter is more than twice as massive than the other planets of our solar system combined. The giant planet's Great Red spot is a centuries-old storm bigger than Earth.",
     "lengthOfYear": "11.86 Earth years",
-    "distanceFromTheSun": "5.2 AU",
+    "distanceFromTheSun": 5.2,
     "namesake": "King of the Greek gods",
     "img": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg",
     "moons": [
@@ -10208,7 +10208,7 @@ db.planets.insertMany([
     "isPlanet": true,
     "description": "Mars is a dusty, cold, desert world with a very thin atmosphere. There is strong evidence Mars was—billions of years ago—wetter and warmer, with a thicker atmosphere.",
     "lengthOfYear": "1.88 Earth years",
-    "distanceFromTheSun": "1.5 AU",
+    "distanceFromTheSun": 1.5,
     "namesake": "Greek god of war",
     "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/1024px-OSIRIS_Mars_true_color.jpg",
     "moons": [
@@ -10263,7 +10263,7 @@ db.planets.insertMany([
     "isPlanet": true,
     "description": "The smallest planet in our solar system and closest to the Sun—is only slightly larger than Earth's Moon. Mercury is the fastest planet, zipping around the Sun every 88 Earth days.",
     "lengthOfYear": "88 Earth days",
-    "distanceFromTheSun": "0.4 AU",
+    "distanceFromTheSun": 0.4,
     "namesake": "Greek god of commerce, messenger of the gods, and mediator between gods and mortals",
     "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Mercury_in_true_color.jpg/800px-Mercury_in_true_color.jpg",
     "moons": null,
@@ -10309,7 +10309,7 @@ db.planets.insertMany([
     "isPlanet": true,
     "description": "Adorned with a dazzling, complex system of icy rings, Saturn is unique in our solar system. The other giant planets have rings, but none are as spectacular as Saturn's.",
     "lengthOfYear": "29.45 Earth years",
-    "distanceFromTheSun": "9.5 AU",
+    "distanceFromTheSun": 9.5,
     "namesake": "Father of the Greek god Jupiter and leader and youngest of the first generation of Titans",
     "img": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg",
     "moons": [
@@ -10725,7 +10725,7 @@ db.planets.insertMany([
     "isPlanet": true,
     "description": "Earth—our home planet—is the only place we know of so far that’s inhabited by living things. It's also the only planet in our solar system with liquid water on the surface.",
     "lengthOfYear": "365.25 days",
-    "distanceFromTheSun": "1",
+    "distanceFromTheSun": 1,
     "namesake": "Variation of 'the ground' in many languages",
     "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/The_Blue_Marble_%28remastered%29.jpg/1024px-The_Blue_Marble_%28remastered%29.jpg",
     "moons": [
@@ -10776,7 +10776,7 @@ db.planets.insertMany([
     "isPlanet": true,
     "description": "Venus spins slowly in the opposite direction from most planets. A thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system.",
     "lengthOfYear": "225 Earth years",
-    "distanceFromTheSun": " 0.7 AU",
+    "distanceFromTheSun": 0.7,
     "namesake": "Greek goddess of love",
     "img": "https://upload.wikimedia.org/wikipedia/commons/0/08/Venus_from_Mariner_10.jpg",
     "moons": null,
