@@ -12,9 +12,9 @@ const PlanetCharts = ({planets}) => {
 
 // const sampleArray = [1, 2, 3, 4, 5, 6]
 
-// const isPlanetList = planets.map((planet) => planet.isPlanet === true)
+const isPlanetList = planets.filter((planet) => planet.isPlanet === true)
 
-const planetGravity = planets.map((planet) => planet.gravity)
+const planetGravity = isPlanetList.map((planet) => planet.density)
     
 
 
@@ -23,7 +23,7 @@ const options = {
         type: 'column'
     },
     title: {
-        text: 'Masses of the Planets'
+        text: 'Gravity of the Planets'
     },
     xAxis: {
         min: 0,
