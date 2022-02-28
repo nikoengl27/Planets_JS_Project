@@ -10,6 +10,7 @@ const isPlanetList = planets.filter((planet) => planet.isPlanet === true)
 
 const planetGravity = isPlanetList.map((planet) => planet.gravity)
 const planetName = isPlanetList.map((planet) => planet.englishName)
+const planetMass = isPlanetList.map((planet) => planet.mass.massValue)
 console.log(isPlanetList)
     
 
@@ -53,9 +54,41 @@ const options = {
     }]
 };
 
+const options2 = {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Planets by Mass'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            cursor: 'pointer'
+        }
+    },
+    
+    series: [{
+        name: planetName,
+        colorByPoint: true,
+        data: planetMass
+        }]
+};
+
 return(
     <div>
       <HighchartsReact highcharts={Highcharts} options={options} planets={planets}/>
+      <HighchartsReact highcharts={Highcharts} options={options2} planets={planets}/>
     </div>)
 
 
