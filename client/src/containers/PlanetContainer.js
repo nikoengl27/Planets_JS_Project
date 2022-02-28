@@ -3,6 +3,10 @@ import PlanetList from '../components/PlanetList'
 import PlanetDetail from '../components/PlanetDetail'
 import NewPlanetForm from '../components/NewPlanetForm'
 
+import PlanetCharts from '../components/PlanetCharts'
+// import db from mongodb 
+
+
 const PlanetContainer = () => {
 
   const baseURL = 'http://localhost:5000/api/planets/';
@@ -35,6 +39,34 @@ const PlanetContainer = () => {
     .then(() => getPlanets())
 }
 
+const updatePlanet = (payload) => {
+  return fetch(baseURL + selectedPlanet._id, {
+    method: 'PUT',
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(res => res.json());
+}
+
+
+
+// const resetPlanets = () => {
+//   db.dropDatabase()
+//   db.load("/server/db/seeds.js")
+
+// }
+
+// const editPlanet = () => {
+//   updatePlanet({
+//     _id: selectedPlanet._id,
+//     name: selectedPlanet.name,
+//     description: selectedPlanet.description,
+//   });
+// }
+
+
   const addButton = () => {
     setAdd(!showAdd)
   }
@@ -42,8 +74,16 @@ const PlanetContainer = () => {
   return (
     <>
     <div className="main-container">
+
       <div class="header">
         <h1>The Solar System</h1>
+
+      {/* <PlanetCharts planets={planets}/> */}
+      <div className="new-planet">
+        <h3>Newly Discovered Star</h3>
+        <button onClick={addButton}> ADD</button>
+        {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/> : null}
+
       </div>
       <div className="planet-list">
         {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet}/> : null}
