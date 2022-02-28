@@ -79,7 +79,7 @@ const updatePlanet = (payload) => {
       <div class="header">
         <h1>The Solar System</h1>
 
-      {/* <PlanetCharts planets={planets}/> */}
+      <PlanetCharts planets={planets}/>
       <div className="new-planet">
         <button onClick={addButton}> ADD</button>
         {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet}/> : null}
