@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { deletePlanet } from './PlanetSelector';
 import PlanetContainer from '../containers/PlanetContainer';
-// import deletePlanet from './PlanetSelector.js'
+import PlanetList from './PlanetList';
 
 
 const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {

@@ -1,11 +1,11 @@
 /* .planet-list{
   display: grid;
-    height: 500px;
-    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
-    gap: 25px 60px;
-}
+     height: 500px;
+     grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+     gap: 25px 60px;
+ }
+ } */
 
-.main-container{
+ .main-container{
   display: flex;
-} */
-
+}

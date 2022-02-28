@@ -17,5 +17,6 @@ const Planet = ({planet, onPlanetClick, onPlanetSubmit}) => {
     </>
 )};
 
+
 export default Planet;
     
