@@ -8,11 +8,15 @@ const PlanetCharts = ({planets}) => {
 
 const isPlanetList = planets.filter((planet) => planet.isPlanet === true)
 
+
 const planetGravity = isPlanetList.map((planet) => planet.gravity)
+
 const planetName = isPlanetList.map((planet) => planet.englishName)
 const planetMass = isPlanetList.map((planet) => planet.mass.massValue)
 const planetDistance = isPlanetList.map((planet) => planet.distanceFromTheSun)
 console.log(isPlanetList)
+console.log(planetDistance)
+
     
 
 const barChart = {
@@ -82,11 +86,67 @@ const pieChart = {
     },
     series: [{
         name: planetName,
+        categories: planetName,
         colorByPoint: true,
-        data: [{
-            name: planetName,
-            y: planetMass}]}]
+        data: planetMass}]
 };
+
+const lineGraph = {
+
+    title: {
+        text: 'Distance from the Sun'
+    },
+
+
+    yAxis: {
+        title: {
+            text: 'Distance'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Planet'
+        },
+        categories: planetName,
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 0
+        }
+    },
+
+    series: [{
+        // categories: planetName,
+        colorByPoint: true,
+        data: planetDistance}],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }}
+
+;
 
 
 
@@ -94,6 +154,7 @@ return(
     <div>
       <HighchartsReact highcharts={Highcharts} options={barChart} planets={planets}/>
       <HighchartsReact highcharts={Highcharts} options={pieChart} planets={planets}/>
+      <HighchartsReact highcharts={Highcharts} options={lineGraph} planets={planets}/>
     </div>)
 
 
