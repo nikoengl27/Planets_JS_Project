@@ -1,0 +1,24 @@
+#allCharts{
+    margin: 20px;
+    padding: 50px;
+}
+
+#barChart{
+    padding: 50px;
+}
+
+#lineGraph{
+    padding: 50px;
+}
+
+#pieChartMass{
+    padding: 50px;
+    width: 40%; 
+    float: left; 
+}
+
+#pieChartVolume{
+    padding: 50px;
+    width: 40%;
+    float: right;
+}
