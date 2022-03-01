@@ -8,26 +8,35 @@ const PlanetCharts = ({planets}) => {
 
 const isPlanetList = planets.filter((planet) => planet.isPlanet === true)
 
-const planetGravity = isPlanetList.map((planet) => planet.gravity)
+// const planetGravity = isPlanetList.map((planet) => planet.gravity)
 
-const planetName = isPlanetList.map((planet) => planet.englishName)
-const planetMass = isPlanetList.map((planet) => planet.mass.massValue)
-const planetDistance = isPlanetList.map((planet) => planet.distanceFromTheSun)
-const planetNameAndMass = isPlanetList.map((planet) => ({name: planet.englishName, mass: planet.mass.massValue}))
-console.log(isPlanetList)
+// const planetName = isPlanetList.map((planet) => planet.englishName)
+// const planetMass = isPlanetList.map((planet) => planet.mass.massValue)
+// const planetDistance = isPlanetList.map((planet) => planet.distanceFromTheSun)
+const planetNameAndDetails = isPlanetList.map((planet) => ({name: planet.englishName, mass: planet.mass.massValue, distance: planet.distanceFromTheSun, gravity: planet.gravity}))
+// console.log(isPlanetList)
+// console.log(planetDistance)
+console.log(planetNameAndDetails)
+const sortedList = planetNameAndDetails.sort((a, b) => parseFloat(a.distance) - parseFloat(b.distance));
+console.log(sortedList)
+const planetName = sortedList.map((planet) => planet.name)
+const planetGravity = sortedList.map((planet) => planet.gravity)
+const planetMass = sortedList.map((planet) => planet.mass.massValue)
+const planetDistance = sortedList.map((planet) => planet.distanceFromTheSun)
+console.log(planetName)
+console.log(planetGravity)
 console.log(planetDistance)
-console.log(planetNameAndMass)
 
-let sortedPlanets = []
-let currentClosestPlanet = 0;
-  for (const planet of isPlanetList) {
-    if (planet.distanceFromTheSun > currentClosestPlanet) {
-      currentClosestPlanet = planet.distanceFromTheSun;
-      sortedPlanets.push(planet)
-    }
-  }
-console.log(currentClosestPlanet)
-console.log(sortedPlanets)
+// let sortedPlanets = []
+// let currentClosestPlanet = 0;
+//   for (const planet of isPlanetList) {
+//     if (planet.distanceFromTheSun > currentClosestPlanet) {
+//       currentClosestPlanet = planet.distanceFromTheSun;
+//       sortedPlanets.push(planet)
+//     }
+//   }
+// console.log(currentClosestPlanet)
+// console.log(sortedPlanets)
 
     
 
@@ -48,7 +57,7 @@ const barChart = {
     yAxis: {
         min: 0,
         title: {
-            text: 'Mass'
+            text: 'Gravity'
         }
     },
     tooltip: {
@@ -97,11 +106,12 @@ const pieChart = {
         }
     },
     series: [{
+        keys: ['name', 'y'],
         name: planetName,
         categories: planetName,
         colorByPoint: true,
-        data: planetMass}]
-};
+        data: [planetName, planetMass],
+}]}
 
 const lineGraph = {
 
@@ -139,10 +149,10 @@ const lineGraph = {
     },
 
     series: [{
-        // categories: planetName,
+        categories: planetName,
         colorByPoint: true,
-        data: planetDistance}],
-
+        data: planetDistance,
+    }],
     responsive: {
         rules: [{
             condition: {
