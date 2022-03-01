@@ -12,7 +12,6 @@ const isPlanetList = planets.filter((planet) => planet.isPlanet === true)
 const planetList = isPlanetList.map((planet) => ({name: planet.englishName, mass: planet.mass.massExponent, distance: planet.distanceFromTheSun, gravity: planet.gravity, volume: planet.vol.volExponent}))
 const planetNames = planetList.map((planet) => planet.name)
 const randomPlanet = planetList[Math.floor(Math.random() * planetList.length)];
-let correct
 // const randomPlanetName = question1Planet.name
 // const randomPlanetMass = question1Planet.mass
 
@@ -38,9 +37,7 @@ const submitQuiz = () => {
 
 const handleSubmit = (event) => {
     event.preventDefault()
-    const payload = answer1
-    setAnswer1(payload)
-    console.log(payload)
+    // setAnswer1(answer1)
     result(question1Planet, answer1)
     submitQuiz()
   }
@@ -53,14 +50,16 @@ const getQuestion1Planet = () => {
     setQuestion1Planet(randomPlanet)
 }
 
-const result = (question1Planet, answer1) => {
-    if(question1Planet.name === answer1){
+const result = () => {
+    if(answer1 === question1Planet.name){
         setSuccessState(true) 
     } else {
         setSuccessState(false)
     }
 }
 console.log(successState)
+console.log(question1Planet.name)
+console.log(answer1)
 
 
 
@@ -75,7 +74,7 @@ return(
           <option disabled>Choose...</option>
   {planetNames.map((name) => (<option>{name}</option>))}
     </select>
-    <button onClick={submitQuiz}> Submit Answers</button>
+    <button onClick={handleSubmit}> Submit Answers</button>
     </form>
     </div>}
     { showAnswers ?
