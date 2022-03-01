@@ -1,11 +1,8 @@
 import React, {useState} from 'react';
-import { deletePlanet } from './PlanetSelector';
-import PlanetContainer from '../containers/PlanetContainer';
+// import { deletePlanet } from './PlanetSelector';
 
 
 const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
-
-    
 
     const [englishName, setEnglishName] = useState('')
     const [description, setDescription] = useState('')
@@ -67,6 +64,14 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
         setIsPlanet('')
     }
 
+    const baseURL = 'http://localhost:5000/api/planets/';
+    
+    const deletePlanet = (id) => {
+        return fetch(baseURL + id, {
+          method: 'DELETE'
+        });
+      }
+      
     const handleFormSubmit = (event) => {
         event.preventDefault()
         const payload = {
@@ -87,6 +92,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
     const moons = selectedPlanet.moons.map ((moon) => moon.moon)
     const newMoons = moons.join(', ')
     const countMoons = moons.length
+
     
     
   return (
@@ -134,7 +140,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
                 id="description" 
                 value={description}
                 placeholder={selectedPlanet.description}
-                required />
+                />
             </div>
             <div className="formWrap">
                 <label htmlFor="lengthOfYear">Length of Year: </label>
@@ -144,7 +150,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
                 id="lengthOfYear" 
                 value={lengthOfYear}
                 placeholder={selectedPlanet.lengthOfYear}
-                required />
+                />
             </div>
             <div className="formWrap">
                 <label htmlFor="distanceFromTheSun">Distance From The Sun: </label>
@@ -154,7 +160,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
                 id="distanceFromTheSun" 
                 value={distanceFromTheSun}
                 placeholder={selectedPlanet.distanceFromTheSun}
-                required />
+                />
             </div>
             <div className="formWrap">
                 <label htmlFor="namesake">Namesake: </label>
@@ -164,7 +170,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
                 id="namesake" 
                 value={namesake}
                 placeholder={selectedPlanet.namesake}
-                required />
+                />
             </div>
             <div className="formWrap">
                 <label htmlFor="image">Image URL: </label>

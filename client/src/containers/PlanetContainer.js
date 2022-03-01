@@ -2,16 +2,13 @@ import { useEffect, useState } from 'react'
 import PlanetList from '../components/PlanetList'
 import PlanetDetail from '../components/PlanetDetail'
 import NewPlanetForm from '../components/NewPlanetForm'
-
 import PlanetCharts from '../components/PlanetCharts'
-// import db from mongodb 
-
 
 const PlanetContainer = () => {
 
   const baseURL = 'http://localhost:5000/api/planets/';
   const [planets, setPlanets] = useState([])
-  
+
   const [selectedPlanet, setSelectedPlanet] = useState(null);
   const [showPlanetList, setPlanetList] = useState(true)
   const [showAdd, setAdd] = useState(false)
@@ -52,23 +49,6 @@ const updatePlanet = (payload) => {
     .then(res => res.json());
 }
 
-
-
-// const resetPlanets = () => {
-//   db.dropDatabase()
-//   db.load("/server/db/seeds.js")
-
-// }
-
-// const editPlanet = () => {
-//   updatePlanet({
-//     _id: selectedPlanet._id,
-//     name: selectedPlanet.name,
-//     description: selectedPlanet.description,
-//   });
-// }
-
-
   const homeButton = () => {
     setAdd(false)
     setPlanetList(true)
@@ -94,7 +74,7 @@ const updatePlanet = (payload) => {
     <>
     <div className="main-container">
       
-      <div class="header">
+      <div className="header">
         {/* <h1>The Solar System</h1> */}
       </div>
       <div className='title'>
@@ -103,7 +83,7 @@ const updatePlanet = (payload) => {
 
       {showAbout ?
       <>
-        <div class="about">
+        <div className="about">
           <p>The planetary system we call home is located in an outer spiral arm of the Milky Way galaxy.</p>
           <p>Our solar system consists of our star, the Sun, and everything bound to it by gravity – 
             the planets Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune; dwarf planets such as Pluto; 
@@ -137,8 +117,6 @@ const updatePlanet = (payload) => {
         </div>
       </>
       : null}
-
-      
 
       <div className="buttons">
         <button onClick={homeButton}> Home</button>

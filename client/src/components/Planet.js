@@ -1,6 +1,6 @@
 import React from "react";
 
-const Planet = ({planet, onPlanetClick, onPlanetSubmit}) => {
+const Planet = ({planet, onPlanetClick}) => {
 
     const handleClick = function() {
         onPlanetClick(planet);

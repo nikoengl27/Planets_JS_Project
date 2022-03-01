@@ -1,7 +1,7 @@
 import React from "react";
 import Planet from "./Planet";
 
-const PlanetList = ({planets, onPlanetSelected, onPlanetSubmit}) => {
+const PlanetList = ({planets, onPlanetSelected}) => {
 
     const planetItems = planets.map((planet, index) => {
         if(planet.isPlanet){
