@@ -10,12 +10,27 @@
  .header {
   background-image: url(./images/solarsystem.png);
   background-size: contain;
-  padding-top: 1%;
+  padding-top: 5%;
   text-align: center;
   color: aliceblue;
  }
 
- .new-planet{
+ .title {
+   text-align: center;
+   color: white;
+ }
+
+ .about {
+  text-align: center;
+  color: aliceblue;
+  margin-left: 2%;
+  margin-right: 55%;
+  border-style: solid;
+  border-radius: 2%;
+  
+ }
+
+ .buttons{
    position: absolute;
    top: 6.5%;
    right: 0;
@@ -34,8 +49,18 @@
 
 .edit-planet{
   position: absolute;
-  right: 0%;
-  bottom: 10%;
+  right: 3%;
+  bottom: 5%;
+  text-align: right;
+  color: white;
+}
+
+.new-planet-form {
+  position: fixed;
+  left: 34%;
+  top: 30%; 
+  color: aliceblue;
+  text-align: right;
 }
 /* 
  .main-container{

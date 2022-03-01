@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { deletePlanet } from './PlanetSelector';
+import PlanetContainer from '../containers/PlanetContainer';
 
 
 const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
@@ -9,11 +10,16 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
     const [englishName, setEnglishName] = useState('')
     const [description, setDescription] = useState('')
     const [isPlanet, setIsPlanet] = useState('')
+    const [lengthOfYear, setLengthOfYear] = useState('')
+    const [distanceFromTheSun, setDistanceFromTheSun] = useState('')
+    const [namesake, setNamesake] = useState('')
+    const [image, setImage] = useState('')
 
-    // const [showEdit, setEdit] = useState(false)
-    // const editButton = () => {
-    //     setEdit(!showEdit)
-    //   }
+
+    const [showEdit, setEdit] = useState(false)
+    const editButton = () => {
+        setEdit(!showEdit)
+      }
 
     const IsItPlanet = {
         Yes: 'Yes',
@@ -28,7 +34,6 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
         })
     }
 
-
     const handleNameChange = (event) => {
         setEnglishName(event.target.value)
     }
@@ -39,6 +44,21 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
 
     const handleIsPlanetChange = (event) => {
         setIsPlanet(event.target.value)
+    }
+    
+    const handleLengthOfYearChange = (event) => {
+        setLengthOfYear(event.target.value)
+    }
+
+    const handleDistanceFromTheSun = (event) => {
+        setDistanceFromTheSun(event.target.value)
+    }
+    const handleNamesake = (event) => {
+        setNamesake(event.target.value)
+    }
+
+    const handleImageChange = (event) => {
+        setImage(event.target.value)
     }
 
     const resetForm = () => {
@@ -53,64 +73,108 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
             englishName,
             description,
             isPlanet,
+            lengthOfYear,
+            distanceFromTheSun,
+            namesake
         }
         onPlanetSubmit(payload)
         console.log(payload)
         resetForm()
         window.location.reload()
     }
-
-    // const moons = selectedPlanet.moons.map ((moon) => moon.moon)
-    // const newMoons = moons.join(' ')
-    // const countMoons = moons.length
-
+    
+    //counts and fetches moons
+    const moons = selectedPlanet.moons.map ((moon) => moon.moon)
+    const newMoons = moons.join(' ')
+    const countMoons = moons.length
     
     
   return (
         <>
 
-        {/* <button onClick={editButton}> edit</button> */}
 
-        <div className='planet-image'>
+        <div className="planet-image">
         <img src={selectedPlanet.img} height="300px" width= "300px"></img>
         </div>
-        <div className='planet-details'>
+        <div className="planet-details">
         <p><u>Name</u>: {selectedPlanet.englishName}</p>      
         <p><u>Description</u>: {selectedPlanet.description}</p>
         <p><u>Length of Year</u>: {selectedPlanet.lengthOfYear}</p>
         <p><u>Distance from Sun</u>: {selectedPlanet.distanceFromTheSun}</p>
         <p><u>Namesake</u>: {selectedPlanet.namesake}</p>
 
-        {/* <p><u> {selectedPlanet.englishName} has {countMoons} moons: </u></p>
-        <p>{newMoons}</p> */}
+        <p><u> {selectedPlanet.englishName} has {countMoons} moons: </u></p>
+        <p>{newMoons}</p>
 
-        <div className='delete-planet'>
-            <button onClick={handleDeletePlanet}>
-            Destroy Planet!
-            </button>
+        <div className='delete-edit-planet-buttons'>
+            <button onClick={handleDeletePlanet}>Destroy Planet!</button>
+            <button onClick={editButton}> Edit a Planet</button>
         </div>
         </div>
 
+        {showEdit ?
         <div className='edit-planet'>
         <form onSubmit={handleFormSubmit} id="edit-planet-form" >
              <h2>Edit Planet Details:</h2>
           <div className="formWrap">
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">Name: </label>
                 <input 
                 onChange={handleNameChange}
                 type="text" 
                 id="name" 
                 value={englishName}
+                placeholder={selectedPlanet.englishName}
                 required />
             </div>
             <div className="formWrap">
-                <label htmlFor="description">Description:</label>
+                <label htmlFor="description">Description: </label>
                 <input 
                 onChange={handleDescriptionChange} 
                 type="text" 
                 id="description" 
                 value={description}
+                placeholder={selectedPlanet.description}
                 required />
+            </div>
+            <div className="formWrap">
+                <label htmlFor="lengthOfYear">Length of Year: </label>
+                <input 
+                onChange={handleLengthOfYearChange} 
+                type="text" 
+                id="lengthOfYear" 
+                value={lengthOfYear}
+                placeholder={selectedPlanet.lengthOfYear}
+                required />
+            </div>
+            <div className="formWrap">
+                <label htmlFor="distanceFromTheSun">Distance From The Sun: </label>
+                <input 
+                onChange={handleDistanceFromTheSun} 
+                type="text" 
+                id="distanceFromTheSun" 
+                value={distanceFromTheSun}
+                placeholder={selectedPlanet.distanceFromTheSun}
+                required />
+            </div>
+            <div className="formWrap">
+                <label htmlFor="namesake">Namesake: </label>
+                <input 
+                onChange={handleNamesake}
+                type="text" 
+                id="namesake" 
+                value={namesake}
+                placeholder={selectedPlanet.namesake}
+                required />
+            </div>
+            <div className="formWrap">
+                <label htmlFor="image">Image URL: </label>
+                <input 
+                onChange={handleImageChange}
+                type="text" 
+                id="image" 
+                value={image}
+                placeholder={selectedPlanet.image}
+                />
             </div>
             <label htmlFor="isPlanet">Is it a planet though?</label>
             <select name="isPlanet" value={isPlanet} onChange={handleIsPlanetChange}>
@@ -123,6 +187,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
             <input type="submit" value="Save" id="save"/>
 	    </form>
         </div>
+        : null}
         </>
         )
 
