@@ -85,7 +85,7 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
     
     //counts and fetches moons
     const moons = selectedPlanet.moons.map ((moon) => moon.moon)
-    const newMoons = moons.join(' ')
+    const newMoons = moons.join(', ')
     const countMoons = moons.length
     
     
@@ -97,13 +97,13 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
         <img src={selectedPlanet.img} height="300px" width= "300px"></img>
         </div>
         <div className="planet-details">
-        <p><u>Name</u>: {selectedPlanet.englishName}</p>      
-        <p><u>Description</u>: {selectedPlanet.description}</p>
-        <p><u>Length of Year</u>: {selectedPlanet.lengthOfYear}</p>
-        <p><u>Distance from Sun</u>: {selectedPlanet.distanceFromTheSun}</p>
-        <p><u>Namesake</u>: {selectedPlanet.namesake}</p>
+        <p><b> Name </b>: {selectedPlanet.englishName}</p>      
+        <p><b>Description</b>: {selectedPlanet.description}</p>
+        <p><b>Length of Year</b>: {selectedPlanet.lengthOfYear}</p>
+        <p><b>Distance from Sun</b>: {selectedPlanet.distanceFromTheSun}</p>
+        <p><b>Namesake</b>: {selectedPlanet.namesake}</p>
 
-        <p><u> {selectedPlanet.englishName} has {countMoons} moons: </u></p>
+        <p><b> {selectedPlanet.englishName} has {countMoons} moons: </b></p>
         <p>{newMoons}</p>
 
         <div className='delete-edit-planet-buttons'>
