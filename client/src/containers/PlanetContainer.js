@@ -3,6 +3,7 @@ import PlanetList from '../components/PlanetList'
 import PlanetDetail from '../components/PlanetDetail'
 import NewPlanetForm from '../components/NewPlanetForm'
 import PlanetCharts from '../components/PlanetCharts'
+import PlanetQuiz from '../components/PlanetQuiz'
 
 const PlanetContainer = () => {
 
@@ -13,6 +14,7 @@ const PlanetContainer = () => {
   const [showPlanetList, setPlanetList] = useState(true)
   const [showAdd, setAdd] = useState(false)
   const [showAbout, setAbout] = useState(false)
+  const [showQuiz, setQuiz] = useState(false)
 
   useEffect(() => {
     getPlanets();
@@ -54,6 +56,7 @@ const updatePlanet = (payload) => {
     setPlanetList(true)
     setAbout(false)
     setSelectedPlanet(null)
+    setQuiz(false)
   }
 
   const addButton = () => {
@@ -61,6 +64,15 @@ const updatePlanet = (payload) => {
     setPlanetList(false)
     setAbout(false)
     setSelectedPlanet(null)
+    setQuiz(false)
+  }
+
+  const quizButton = () => {
+    setAdd(false)
+    setPlanetList(false)
+    setAbout(false)
+    setSelectedPlanet(null)
+    setQuiz(true)
   }
 
   const aboutButton = () => {
@@ -68,6 +80,7 @@ const updatePlanet = (payload) => {
     setPlanetList(false)
     setAdd(false)
     setSelectedPlanet(null)
+    setQuiz(false)
   }
 
   return (
@@ -122,10 +135,15 @@ const updatePlanet = (payload) => {
         <button onClick={homeButton}> Home</button>
         <button onClick={aboutButton}> About</button>
         <button onClick={addButton}> Add</button>
+        <button onClick={quizButton}> Quiz</button>
       </div>
 
       <div className="new-planet">
         {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet} /> : null}
+      </div>
+
+      <div className="quiz">
+        {showQuiz ? <PlanetQuiz planets={planets}/> : null}
       </div>
 
       <div className="planet-detail">
