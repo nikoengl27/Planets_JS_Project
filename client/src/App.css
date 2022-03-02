@@ -70,20 +70,24 @@
 }
 
 .peopleInSpace {
-  text-align: center;
+  text-align: left;
   color: aliceblue;
   position: absolute;
   right: 10%;
-  top: 30%;
+  top: 22%;
 }
 
 .liveVideo {
   position: absolute;
   left: 10%;
-  top: 25%;
+  top: 20%;
+  color: white;
+  text-align: center;
 }
 
-/* 
- .main-container{
-  display: flex;
-} */
+.astro-gif {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
+

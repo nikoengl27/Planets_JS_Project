@@ -143,6 +143,9 @@ return(
     </form>
     </div>}
 
+    <div className='astro-gif'>
+        <img src="https://i.gifer.com/X5NY.gif"/>
+    </div>
     { showAnswers ?
     <div className="answers"> 
     
