@@ -10,7 +10,7 @@ const [answer1, setAnswer1] = useState('')
 const [answer2, setAnswer2] = useState('')
 const [successState1, setSuccessState1] = useState(false)
 const [successState2, setSuccessState2] = useState(false)
-const [successStateOverall, setSuccessStateOverall] = useState(false)
+var [score, setScore] = useState(0)
 
 const isPlanetList = planets.filter((planet) => planet.isPlanet === true)
 const planetList = isPlanetList.map((planet) => ({name: planet.englishName, mass: planet.mass.massExponent, distance: planet.distanceFromTheSun, gravity: planet.gravity, volume: planet.vol.volExponent, namesake: planet.namesake}))
@@ -37,7 +37,8 @@ const handleSubmit = (event) => {
     event.preventDefault()
     result1(question1Planet, answer1)
     result2(question2Planet, answer2)
-    finalResult(successState1, successState2)
+    console.log(score)
+    // finalResult(successState1, successState2)
     submitQuiz()
   }
 
@@ -60,6 +61,7 @@ const getQuestion2Planet = () => {
 const result1 = () => {
     if(answer1 === question1Planet.name){
         setSuccessState1(true) 
+        setScore(score += 1)
     } else {
         setSuccessState1(false)
     }
@@ -68,23 +70,25 @@ const result1 = () => {
 const result2 = () => {
     if(answer2 === question2Planet.name){
         setSuccessState2(true) 
+        setScore(score += 1)
     } else {
         setSuccessState2(false)
     }
 }
 
-const finalResult = (successState1, successState2) => {
-        if(successState1 === true || successState2 === true) {
-            setSuccessStateOverall(true)
-        } else {
-            setSuccessStateOverall(false)
-        }
-    }
+// const finalResult = (successState1, successState2) => {
+//         if(successState1 === true || successState2 === true) {
+//             setSuccessStateOverall(true)
+//         } else {
+//             setSuccessStateOverall(false)
+//         }
+//     }
 
 console.log(successState1)
 console.log(question1Planet.name)
 console.log(question2Planet.name)
-console.log(successStateOverall)
+console.log(score)
+// console.log(successStateOverall)
 
 
 
@@ -123,7 +127,9 @@ return(
     <p>Question Two Correct! You are correct in saying it is {answer2}.</p> :
     <p>Question Two Very Very Wrong! The correct answer is {question2Planet.name} </p>}
 
-    {successStateOverall ?
+    <p>You scored {score} out of a possible 2!</p>
+    
+    {score = 2 ?
     <p> Well done you got them all!</p> :
     <p> Bad luck you didn't get them all. </p>}
 
