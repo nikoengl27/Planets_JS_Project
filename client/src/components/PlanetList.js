@@ -1,8 +1,7 @@
 import React from "react";
 import Planet from "./Planet";
-import PlanetDetail from "./Planet";
 
-const PlanetList = ({planets, onPlanetSelected, onPlanetSubmit}) => {
+const PlanetList = ({planets, onPlanetSelected}) => {
 
     const planetItems = planets.map((planet, index) => {
         if(planet.isPlanet){
@@ -11,7 +10,7 @@ const PlanetList = ({planets, onPlanetSelected, onPlanetSubmit}) => {
     })
 
     return (
-        <div className="planet-list">
+        <div className="planet-items">
             {planetItems}
         </div>
     )

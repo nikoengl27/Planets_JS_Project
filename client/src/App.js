@@ -3,7 +3,9 @@ import PlanetContainer from './containers/PlanetContainer.js'
 
 function App() {
   return (
+    <>
     <PlanetContainer/>
+    </>
   );
 }
 

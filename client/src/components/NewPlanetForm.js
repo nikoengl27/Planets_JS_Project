@@ -5,9 +5,11 @@ const PlanetForm = ({onPlanetSubmit}) => {
 
     const [englishName, setEnglishName] = useState('')
     const [description, setDescription] = useState('')
+    const [lengthOfYear, setLengthOfYear] = useState('')
+    const [distanceFromTheSun, setDistanceFromTheSun] = useState('')
+    const [namesake, setNamesake] = useState('')
     const [isPlanet, setIsPlanet] = useState('')
-    const [image, setImage] = useState('')
-    // const img = '/client/src/images/unknownplanet.png'
+    const [img, setImg] = useState('https://upload.wikimedia.org/wikipedia/commons/c/c1/Fictional_Planet_Qo%27noS.png')
 
     const IsItPlanet = {
         Yes: 'Yes',
@@ -22,19 +24,25 @@ const PlanetForm = ({onPlanetSubmit}) => {
         setDescription(event.target.value)
     }
 
+    const handleLengthOfYearChange = (event) => {
+        setLengthOfYear(event.target.value)
+    }
+
+    const handleDistanceFromTheSun = (event) => {
+        setDistanceFromTheSun(event.target.value)
+    }
+    const handleNamesake = (event) => {
+        setNamesake(event.target.value)
+    }
+
     const handleIsPlanetChange = (event) => {
         setIsPlanet(event.target.value)
     }
     const handleImageChange = (event) => {
-        setImage(event.target.value)
+        setImg(event.target.value)
     }
 
-    const resetForm = () => {
-        setEnglishName('')
-        setDescription('')
-        setIsPlanet('')
-        setImage('')
-    }
+    const moons = []
 
     const handleFormSubmit = (event) => {
         event.preventDefault()
@@ -42,34 +50,58 @@ const PlanetForm = ({onPlanetSubmit}) => {
             englishName,
             description,
             isPlanet,
-            image
-            // img
+            lengthOfYear,
+            distanceFromTheSun,
+            namesake,
+            img,
+            moons
         }
         onPlanetSubmit(payload)
-        resetForm()
+        window.location.reload()
+
     }
 
     return (
-        <form onSubmit={handleFormSubmit}>
-            <label htmlFor="englishName">Name:</label>
-            <input type="text" name="englishName" value={englishName} onChange={handleNameChange} required/>
         
-            <label htmlFor="description">Description:</label>
-            <input type="text" name="description" value={description} onChange={handleDescriptionChange} required/>
-      
-            <label htmlFor="image">Image URL:</label>
-            <input type="text" name="image" value={image} onChange={handleImageChange} required/>
-      
-            <label htmlFor="isPlanet">Is it a planet though?</label>
-            <select name="isPlanet" value={isPlanet} onChange={handleIsPlanetChange}>
-            <option value="" disabled>Choose...</option>
-            <option value={IsItPlanet.Yes}>Yes it is!</option>
-            <option value={IsItPlanet.No}>Nope</option>
-            </select>
+        <div className="new-planet-form">
+            <form onSubmit={handleFormSubmit}>
+                <p>
+                    <label htmlFor="englishName">Name: </label>
+                    <input type="text" name="englishName" value={englishName} onChange={handleNameChange} required/>
+                </p>
+                <p>
+                <label htmlFor="description">Description: </label>
+                <input type="text" name="description" value={description} onChange={handleDescriptionChange} required/>
+                </p>
+                <p>
+                <label htmlFor="lengthOfYear">Length of Year: </label>
+                <input type="text" name="lengthOfYear" value={lengthOfYear} onChange={handleLengthOfYearChange} required/>
+                </p>
+                <p>
+                <label htmlFor="distanceFromTheSun">Distance from the sun: </label>
+                <input type="text" name="distanceFromTheSun" value={distanceFromTheSun} onChange={handleDistanceFromTheSun} required/>
+                </p>
+                <p>
+                <label htmlFor="namesake">Namesake: </label>
+                <input type="text" name="namesake" value={namesake} onChange={handleNamesake} required/>
+                </p>
+                <p>
+                <label htmlFor="img">Image URL:</label>
+                <input type="text" name="img" value={img} onChange={handleImageChange}/>
+                </p>
+                <p>
+                <label htmlFor="isPlanet">Is it a planet though?</label>
+                <select name="isPlanet" value={isPlanet} onChange={handleIsPlanetChange}>
+                <option value="" disabled>Choose...</option>
+                <option value={IsItPlanet.Yes}>Yes it is!</option>
+                <option value={IsItPlanet.No}>Nope</option>
+                </select>
+                </p>
 
-            <input type="submit" value="Save" />
+                <input type="submit" value="Save" />
             
-        </form>
+            </form>
+        </div>
         
         
     )

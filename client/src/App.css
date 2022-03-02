@@ -1,11 +1,93 @@
-/* .planet-list{
+.planet-items{
   display: grid;
-     height: 500px;
-     grid-template: repeat(5, 1fr) / repeat(5, 1fr);
-     gap: 25px 60px;
+  height: 100px;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 25px 60px;
+  color: antiquewhite;
+  padding-left: 7%;
  }
- } */
 
- .main-container{
-  display: flex;
+ .header {
+  background-image: url(./images/solarsystem.png);
+  background-size: contain;
+  padding-top: 5%;
+  text-align: center;
+  color: aliceblue;
+ }
+
+ .title {
+   text-align: center;
+   color: white;
+ }
+
+ .about {
+  text-align: center;
+  color: aliceblue;
+  margin-left: 2%;
+  margin-right: 55%;
+  border-style: solid;
+  border-radius: 2%;
+  
+ }
+
+ .buttons{
+   position: absolute;
+   top: 6.5%;
+   right: 0;
+ }
+
+.planet-image{
+  position: absolute;
+  top: 9%;
 }
+
+.planet-details{
+  position: absolute;
+  left: 25%;
+  color: aliceblue;
+}
+
+.edit-planet{
+  position: absolute;
+  right: 3%;
+  bottom: 5%;
+  text-align: right;
+  color: white;
+}
+
+.new-planet-form {
+  position: fixed;
+  left: 34%;
+  top: 30%; 
+  color: aliceblue;
+  text-align: right;
+}
+
+.photoOfTheDay {
+  text-align: center;
+  color: aliceblue;
+  position: absolute;
+}
+
+.peopleInSpace {
+  text-align: left;
+  color: aliceblue;
+  position: absolute;
+  right: 10%;
+  top: 22%;
+}
+
+.liveVideo {
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  color: white;
+  text-align: center;
+}
+
+.astro-gif {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
+
