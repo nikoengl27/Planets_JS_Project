@@ -21,8 +21,9 @@ const planetNames = planetList.map((planet) => planet.name)
 const planetDistances = planetList.map((planet) => planet.distance)
 const randomPlanet1 = planetList[Math.floor(Math.random() * planetList.length)];
 const randomPlanet2 = planetList[Math.floor(Math.random() * planetList.length)];
+const randomPlanet3 = planetList[Math.floor(Math.random() * planetList.length)];
 
-const question1 = `Which planet has a mass of ${question1Planet.mass}?`
+const question1 = `Which planet has a gravity (in Newtons) of ${question1Planet.gravity}?`
 const question2 = `Which planet has the namesake: ${question2Planet.namesake}?`
 const question3 = `How far is ${question3Planet.name} from the sun, in astronomincal units (AU)?`
 
@@ -70,7 +71,7 @@ const getQuestion2Planet = () => {
 }
 
 const getQuestion3Planet = () => {
-    setQuestion3Planet(randomPlanet2)
+    setQuestion3Planet(randomPlanet3)
 }
 
 const result1 = () => {
@@ -92,7 +93,8 @@ const result2 = () => {
 }
 
 const result3 = () => {
-    if(answer3 == question3Planet.distance){
+    const stringAnswer = JSON.stringify(question3Planet.distance)
+    if(answer3 === stringAnswer){
         setSuccessState3(true) 
         setScore(score += 1)
     } else {
@@ -115,23 +117,21 @@ return(
     { showAnswers ? null : 
     <div className="quiz">
     <form onSubmit={handleSubmit}>
+        <div className="questions">
 
-        <p>Hello {question1} </p>
+        <p>1. {question1} </p>
       <select name="first-planet" value={answer1} onChange={handleAnswerChange1}>
           <option disabled>Choose...</option>
   {planetNames.map((name) => (<option>{name}</option>))}
     </select>
 
-    <p>{question2} </p>
+    <p>2. {question2} </p>
       <select name="second-planet" value={answer2} onChange={handleAnswerChange2}>
           <option disabled>Choose...</option>
   {planetNames.map((name) => (<option>{name}</option>))}
     </select>
-        <br></br>
-        <br></br>
-    <button onClick={handleSubmit}> Submit Answers</button>
 
-    <p>{question3} </p>
+    <p>3. {question3} </p>
       <select name="third-planet" value={answer3} onChange={handleAnswerChange3}>
           <option disabled>Choose...</option>
   {planetDistances.map((distance) => (<option>{distance}</option>))}
@@ -139,6 +139,7 @@ return(
         <br></br>
         <br></br>
     <button onClick={handleSubmit}> Submit Answers</button>
+    </div>
     </form>
     </div>}
 
@@ -146,23 +147,23 @@ return(
     <div className="answers"> 
     
     { successState1 ?
-    <p>Question One Correct! You are correct in saying it is {answer1}.</p> :
-    <p>Question One Very Very Wrong! The correct answer is {question1Planet.name} </p>}
+    <p>Question 1 correct! The gravity of {answer1} is {randomPlanet1.gravity} Newtons.</p> :
+    <p>Question 1 incorrect! The correct answer is {question1Planet.name}. </p>}
 
 
     { successState2 ?
-    <p>Question Two Correct! You are correct in saying it is {answer2}.</p> :
-    <p>Question Two Very Very Wrong! The correct answer is {question2Planet.name} </p>}
+    <p>Question 2 correct! {answer2}'s name comes from {randomPlanet2.namesake}.</p> :
+    <p>Question 2 incorrect! The correct answer is {question2Planet.name}. </p>}
 
     { successState3 ?
-    <p>Question Three Correct! You are correct in saying it is {answer3}.</p> :
-    <p>Question Three Very Very Wrong! The correct answer is {question3Planet.distance} </p>}
+    <p>Question 3 correct! {answer3} is {randomPlanet3.distance} astronomical units from the sun.</p> :
+    <p>Question 3 incorrect! The correct answer is {question3Planet.distance}. </p>}
 
     <p>You scored {score} out of a possible 3!</p>
 
-    {score = 3 ?
-    <p> Well done you got them all!</p> :
-    <p> Bad luck you didn't get them all. </p>}
+    {score === 3 ?
+    <p> Well done, you got them all. Brian Cox eat your heart out amirite!</p> :
+    <p> Better luck next time! </p>}
 
     </div> : null}
     </>
