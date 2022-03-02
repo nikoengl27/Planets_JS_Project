@@ -1,33 +1,29 @@
+import { registerRendererType } from "highcharts";
+// import $ from "jquery";
 import React, {useEffect, useState} from "react";
 
 const NasaPhoto = () => {
 
-    const [photoData, setPhotoData] = useState(null)
+    const [photoData, setPhotoData] = useState([])
 
     useEffect(() => {
         fetchPhoto()
     },[])
 
-    const baseURL = 'https://api.nasa.gov/planetary/apod?api_key=qh5J2NarfvFJpnvasHmFNGBqoKyBQwhaDC62WIif'
+    const baseURL = 'https://api.nasa.gov/planetary/apod?api_key=qh5J2NarfvFJpnvasHmFNGBqoKyBQwhaDC62WIif&count=1'
 
     const fetchPhoto = function () {
         fetch(baseURL)
         .then (result => result.json())
-        .then (data => setPhotoData(data)
+        .then (data => setPhotoData(data[0])
         )
     }
-    console.log(photoData)
+    
+    console.log(photoData[0]);
 
     if (!photoData) return <div />
-
     
-    // const randomButton = () => {
-
-    //     baseURL = (baseURL + '/&count=1')        
-    // }
     
-    // console.log(randomButton)
-
     return (
 
         <div className="photoOfTheDay">
@@ -38,16 +34,10 @@ const NasaPhoto = () => {
                 <p>{photoData.date}</p>
                 <p>{photoData.explanation}</p>
             <div className="picbuttons">
-                {/* <button onClick={randomButton}> Random</button> */}
-            </div>
-            
+                {/* <button onClick={$( "#photoOfTheDay" ).load(window.location.href + " #photoOfTheDay" )}> Random</button> */}
+            </div>  
         </div>
-
-
     )
-
-
 }
-
 
 export default NasaPhoto

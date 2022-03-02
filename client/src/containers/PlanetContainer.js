@@ -3,9 +3,8 @@ import PlanetList from '../components/PlanetList'
 import PlanetDetail from '../components/PlanetDetail'
 import NewPlanetForm from '../components/NewPlanetForm'
 import PlanetCharts from '../components/PlanetCharts'
-// import PhotoOfTheDay from '../components/PhotoOfTheDay'
 import NasaPhoto from '../components/PhotoOfTheDay'
-import PeopleInSpace from '../components/PeopleInSpace'
+import PeopleInSpace from '../components/Iss'
 import PlanetQuiz from '../components/PlanetQuiz'
 
 const PlanetContainer = () => {
@@ -168,7 +167,7 @@ const updatePlanet = (payload) => {
       <div className="buttons">
         <button onClick={homeButton}> Home</button>
         <button onClick={aboutButton}> About</button>
-        <button onClick={pictureOfTheDayButton}> Picture of the Day</button>
+        <button onClick={pictureOfTheDayButton}> Photo of the Day</button>
         <button onClick={peopleInSpaceButton}> ISS</button>
         <button onClick={quizButton}> Quiz</button>
         <button onClick={addButton}> Add</button>

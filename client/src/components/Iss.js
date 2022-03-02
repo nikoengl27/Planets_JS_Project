@@ -36,12 +36,10 @@ const PeopleInSpace = () => {
                 <p>{luckyBastards.people[7].name} currently in orbit in the {luckyBastards.people[7].craft} craft.</p>
                 <p>{luckyBastards.people[8].name} currently in orbit in the {luckyBastards.people[8].craft} craft.</p>
                 <p>{luckyBastards.people[9].name} currently in orbit in the {luckyBastards.people[9].craft} craft.</p>
-                {/* {showAll} */}
-                {/* <p>The number of people currently in space is {luckyBastards.number}</p> */}
             </div>
             <div className="liveVideo">
             <h2>ISS - Live Feed</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/86YLFOog4GM?&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            </div>
+            <iframe width="600" height="350" src="https://www.youtube.com/embed/86YLFOog4GM?&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            </div>
         </>
     )
 
