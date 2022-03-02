@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-// import { deletePlanet } from './PlanetSelector';
 
 
 const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
@@ -97,7 +96,6 @@ const PlanetDetail = ({selectedPlanet, onPlanetSubmit}) => {
     
   return (
         <>
-
 
         <div className="planet-image">
         <img src={selectedPlanet.img} height="300px" width= "300px"></img>

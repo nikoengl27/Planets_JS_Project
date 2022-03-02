@@ -9,7 +9,7 @@ const PlanetForm = ({onPlanetSubmit}) => {
     const [distanceFromTheSun, setDistanceFromTheSun] = useState('')
     const [namesake, setNamesake] = useState('')
     const [isPlanet, setIsPlanet] = useState('')
-    const [image, setImage] = useState('')
+    const [img, setImg] = useState('https://upload.wikimedia.org/wikipedia/commons/5/5a/Planet_nine_artistic_plain.png')
 
     const IsItPlanet = {
         Yes: 'Yes',
@@ -39,7 +39,7 @@ const PlanetForm = ({onPlanetSubmit}) => {
         setIsPlanet(event.target.value)
     }
     const handleImageChange = (event) => {
-        setImage(event.target.value)
+        setImg(event.target.value)
     }
 
     const moons = []
@@ -53,7 +53,7 @@ const PlanetForm = ({onPlanetSubmit}) => {
             lengthOfYear,
             distanceFromTheSun,
             namesake,
-            image,
+            img,
             moons
         }
         onPlanetSubmit(payload)
@@ -86,8 +86,8 @@ const PlanetForm = ({onPlanetSubmit}) => {
                 <input type="text" name="namesake" value={namesake} onChange={handleNamesake} required/>
                 </p>
                 <p>
-                <label htmlFor="image">Image URL:</label>
-                <input type="text" name="image" value={image} onChange={handleImageChange}/>
+                <label htmlFor="img">Image URL:</label>
+                <input type="text" name="img" value={img} onChange={handleImageChange}/>
                 </p>
                 <p>
                 <label htmlFor="isPlanet">Is it a planet though?</label>

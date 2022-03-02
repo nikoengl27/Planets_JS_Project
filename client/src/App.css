@@ -62,6 +62,27 @@
   color: aliceblue;
   text-align: right;
 }
+
+.photoOfTheDay {
+  text-align: center;
+  color: aliceblue;
+  position: absolute;
+}
+
+.peopleInSpace {
+  text-align: center;
+  color: aliceblue;
+  position: absolute;
+  right: 10%;
+  top: 30%;
+}
+
+.liveVideo {
+  position: absolute;
+  left: 10%;
+  top: 25%;
+}
+
 /* 
  .main-container{
   display: flex;

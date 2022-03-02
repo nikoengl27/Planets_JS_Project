@@ -3,6 +3,10 @@ import PlanetList from '../components/PlanetList'
 import PlanetDetail from '../components/PlanetDetail'
 import NewPlanetForm from '../components/NewPlanetForm'
 import PlanetCharts from '../components/PlanetCharts'
+// import PhotoOfTheDay from '../components/PhotoOfTheDay'
+import NasaPhoto from '../components/PhotoOfTheDay'
+import PeopleInSpace from '../components/PeopleInSpace'
+import PlanetQuiz from '../components/PlanetQuiz'
 
 const PlanetContainer = () => {
 
@@ -13,6 +17,9 @@ const PlanetContainer = () => {
   const [showPlanetList, setPlanetList] = useState(true)
   const [showAdd, setAdd] = useState(false)
   const [showAbout, setAbout] = useState(false)
+  const [showPictureOfTheDay, setPictureOfTheDay] = useState(false)
+  const [showPeopleInSpace, setPeopleInSpace] = useState(false)
+  const [showQuiz, setQuiz] = useState(false)
 
   useEffect(() => {
     getPlanets();
@@ -54,6 +61,9 @@ const updatePlanet = (payload) => {
     setPlanetList(true)
     setAbout(false)
     setSelectedPlanet(null)
+    setPictureOfTheDay(false)
+    setPeopleInSpace(false)
+    setQuiz(false)
   }
 
   const addButton = () => {
@@ -61,6 +71,9 @@ const updatePlanet = (payload) => {
     setPlanetList(false)
     setAbout(false)
     setSelectedPlanet(null)
+    setPictureOfTheDay(false)
+    setPeopleInSpace(false)
+    setQuiz(false)
   }
 
   const aboutButton = () => {
@@ -68,6 +81,39 @@ const updatePlanet = (payload) => {
     setPlanetList(false)
     setAdd(false)
     setSelectedPlanet(null)
+    setPictureOfTheDay(false)
+    setPeopleInSpace(false)
+    setQuiz(false)
+  }
+
+  const pictureOfTheDayButton = () => {
+    setAbout(false)
+    setPlanetList(false)
+    setAdd(false)
+    setSelectedPlanet(null)
+    setPictureOfTheDay(true)
+    setPeopleInSpace(false)
+    setQuiz(false)
+  }
+
+  const peopleInSpaceButton = () => {
+    setAbout(false)
+    setPlanetList(false)
+    setAdd(false)
+    setSelectedPlanet(null)
+    setPictureOfTheDay(false)
+    setPeopleInSpace(true)
+    setQuiz(false)
+  }
+
+  const quizButton = () => {
+    setAdd(false)
+    setPlanetList(false)
+    setAbout(false)
+    setSelectedPlanet(null)
+    setQuiz(true)
+    setPictureOfTheDay(false)
+    setPeopleInSpace(false)
   }
 
   return (
@@ -121,6 +167,9 @@ const updatePlanet = (payload) => {
       <div className="buttons">
         <button onClick={homeButton}> Home</button>
         <button onClick={aboutButton}> About</button>
+        <button onClick={pictureOfTheDayButton}> Picture of the Day</button>
+        <button onClick={peopleInSpaceButton}> ISS</button>
+        <button onClick={quizButton}> Quiz</button>
         <button onClick={addButton}> Add</button>
       </div>
 
@@ -128,9 +177,22 @@ const updatePlanet = (payload) => {
         {showAdd ? <NewPlanetForm planets={planets} onPlanetSubmit={postPlanet} /> : null}
       </div>
 
+      <div className="quiz">
+        {showQuiz ? <PlanetQuiz planets={planets}/> : null}
+      </div>
+
+      <div className="picture-of-the-day">
+        {showPictureOfTheDay ? <NasaPhoto/> : null}
+      </div>
+
+      <div className="people-in-space">
+        {showPeopleInSpace ? <PeopleInSpace/> : null}
+      </div>
+
       <div className="planet-detail">
         {selectedPlanet ? <PlanetDetail selectedPlanet={selectedPlanet} onPlanetSubmit={updatePlanet} /> : null}
       </div>
+
       <div className="planet-list">
         {showPlanetList ? <PlanetList planets={planets} onPlanetSelected={onPlanetSelected} /> : null}
       </div>
