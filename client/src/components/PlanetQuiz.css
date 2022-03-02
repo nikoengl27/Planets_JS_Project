@@ -1,11 +1,12 @@
 .quiz {
-    color: white;
     margin-left: 10%;
     text-align: justify;
+    color: aliceblue;
+        
 }
 
 .answers {
-    color: white;
+    color: aliceblue;
     margin-left: 10%;
     text-align: justify;
 }

@@ -9,7 +9,7 @@ const PlanetForm = ({onPlanetSubmit}) => {
     const [distanceFromTheSun, setDistanceFromTheSun] = useState('')
     const [namesake, setNamesake] = useState('')
     const [isPlanet, setIsPlanet] = useState('')
-    const [img, setImg] = useState('https://upload.wikimedia.org/wikipedia/commons/5/5a/Planet_nine_artistic_plain.png')
+    const [img, setImg] = useState('https://upload.wikimedia.org/wikipedia/commons/c/c1/Fictional_Planet_Qo%27noS.png')
 
     const IsItPlanet = {
         Yes: 'Yes',
